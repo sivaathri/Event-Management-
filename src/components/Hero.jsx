@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen pt-28 pb-32  bg-no-repeat overflow-hidden flex items-center"
+      className="relative min-h-screen pt-28 pb-32 bg-no-repeat overflow-hidden flex items-center"
       style={{ 
         backgroundImage: `url(${herobg})`,
         backgroundSize: "auto 85%",
@@ -54,7 +54,7 @@ export default function Hero() {
             <div className="flex flex-row items-center gap-4 pt-4 w-full sm:w-auto">
               <a 
                 href="#contact" 
-                className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-brand-medium text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
+                className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-[#021C0D] text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
               >
                 Book Consultation
                 <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -124,9 +124,6 @@ export default function Hero() {
 
         </div>
       </div>
-
-      {/* Curved Green Border and Bottom Wave Section Divider */}
-    
     </section>
   );
 }
