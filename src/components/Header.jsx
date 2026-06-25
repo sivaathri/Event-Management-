@@ -32,15 +32,16 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
       
       {/* Curved Header Background Container */}
-      <div className="absolute inset-0 flex -z-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.04)] filter">
+      <div className="absolute inset-0 flex -z-10 drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)] filter">
         {/* Left Curved Panel (Logo Container Background) */}
         <div className="w-[290px] h-[115px] sm:w-[340px] sm:h-[120px] flex-shrink-0 transition-all">
-          <svg viewBox="0 0 340 120" className="w-full h-full fill-white" preserveAspectRatio="none">
+          <svg viewBox="0 0 340 120" className="w-full h-full fill-[#021C0D]" preserveAspectRatio="none">
             <path d="M 0,0 L 340,0 L 340,80 C 295,80 275,120 230,120 L 0,120 Z" />
+            <path d="M 340,79 C 295,79 275,119 230,119 L 0,119" stroke="#D4AF37" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
           </svg>
         </div>
         {/* Right Flat Panel (Navigation/CTA Background) */}
-        <div className="flex-grow h-[80px] bg-white"></div>
+        <div className="flex-grow h-[80px] bg-[#021C0D] border-b-[2px] border-[#D4AF37]"></div>
       </div>
 
       <div className="w-full">
@@ -59,13 +60,13 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-brand-emerald ${
-                  link.active ? 'text-brand-emerald' : 'text-slate-700'
+                className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] ${
+                  link.active ? 'text-[#D4AF37]' : 'text-white/90'
                 }`}
               >
                 {link.name}
                 {link.active && (
-                  <span className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-brand-emerald rounded-full"></span>
+                  <span className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#D4AF37] rounded-full"></span>
                 )}
               </a>
             ))}
@@ -78,10 +79,10 @@ export default function Header() {
               {/* Phone Number with outline circle */}
               <a 
                 href="tel:+919677585986" 
-                className="flex items-center space-x-2 text-slate-900 hover:text-brand-emerald transition-colors group"
+                className="flex items-center space-x-2 text-white/90 hover:text-[#D4AF37] transition-colors group"
               >
-                <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center bg-white group-hover:bg-brand-soft group-hover:border-brand-emerald/30 transition-all">
-                  <Phone size={14} className="text-brand-emerald fill-current" />
+                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-[#D4AF37]/10 group-hover:border-[#D4AF37]/30 transition-all">
+                  <Phone size={14} className="text-[#D4AF37] fill-current" />
                 </div>
                 <span className="text-sm font-bold tracking-wider font-sans whitespace-nowrap">+91 96775 85986</span>
               </a>
@@ -89,7 +90,7 @@ export default function Header() {
               {/* Get a Quote Button */}
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-brand-emerald hover:bg-brand-medium text-white text-[10px] font-bold uppercase tracking-widest rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-[10px] font-bold uppercase tracking-widest rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
               >
                 Get a Quote
                 <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -100,13 +101,13 @@ export default function Header() {
             <div className="md:hidden flex items-center space-x-4">
               <a 
                 href="tel:+919677585986" 
-                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center bg-white text-brand-emerald"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 text-[#D4AF37]"
               >
                 <Phone size={16} className="fill-current" />
               </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1 rounded-md text-slate-700 hover:text-brand-emerald hover:bg-slate-100 transition-colors"
+                className="p-1 rounded-md text-white/90 hover:text-[#D4AF37] hover:bg-white/10 transition-colors"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -118,8 +119,8 @@ export default function Header() {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[80px] bg-white z-40 border-t border-slate-100 animate-fade-in">
-          <div className="px-4 pt-6 pb-8 space-y-4 flex flex-col h-full bg-cream-light">
+        <div className="md:hidden fixed inset-0 top-[80px] bg-[#021C0D] z-40 border-t border-white/10 animate-fade-in">
+          <div className="px-4 pt-6 pb-8 space-y-4 flex flex-col h-full bg-[#021C0D]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -127,32 +128,32 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl font-sans text-base font-semibold transition-all ${
                   link.active 
-                    ? 'bg-brand-soft text-brand-emerald shadow-sm' 
-                    : 'text-slate-700 hover:bg-slate-50 hover:text-brand-emerald'
+                    ? 'bg-white/5 text-[#D4AF37] shadow-sm' 
+                    : 'text-white/80 hover:bg-white/5 hover:text-[#D4AF37]'
                 }`}
               >
                 {link.name}
               </a>
             ))}
             
-            <div className="pt-6 border-t border-slate-200/60 flex flex-col space-y-4">
+            <div className="pt-6 border-t border-white/10 flex flex-col space-y-4">
               <a 
                 href="tel:+919677585986" 
-                className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors"
+                className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
               >
-                <div className="w-10 h-10 rounded-full bg-brand-soft flex items-center justify-center text-brand-emerald">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#D4AF37]">
                   <Phone size={18} className="fill-current" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 font-medium text-left">Call Us Directly</p>
-                  <p className="text-sm font-bold tracking-wider text-slate-800 font-sans">+91 96775 85986</p>
+                  <p className="text-xs text-white/50 font-medium text-left">Call Us Directly</p>
+                  <p className="text-sm font-bold tracking-wider text-white/90 font-sans">+91 96775 85986</p>
                 </div>
               </a>
 
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center py-4 bg-brand-emerald hover:bg-brand-medium text-white text-sm font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all"
+                className="w-full flex items-center justify-center py-4 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-sm font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all"
               >
                 Get a Quote
                 <ArrowRight size={16} className="ml-2" />

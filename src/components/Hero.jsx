@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Logo from './Logo';
 import herobg from '../assets/herobg.png';
-import herologo from '../assets/herologo.png';
+import herologo from '../assets/logo4.png';
 
 export default function Hero() {
   return (
@@ -11,11 +11,12 @@ export default function Hero() {
       className="relative min-h-screen pt-28 pb-32  bg-no-repeat overflow-hidden flex items-center"
       style={{ 
         backgroundImage: `url(${herobg})`,
-        backgroundSize: "auto 95%",
-        backgroundPosition: "right center"
+        backgroundSize: "auto 85%",
+        backgroundPosition: "right center",
+      
       }}
     >
-      <div className="w-full pl-4 sm:pl-8 lg:pl-16 pr-0">
+      <div className="w-full ml-16 pl-4 sm:pl-8 lg:pl-16 pr-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
           
           {/* Left Column: Copy & Actions */}
@@ -71,7 +72,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Large Logo overlaying the background stage image */}
-          <div className="lg:col-span-7 flex items-start justify-center lg:justify-start lg:pl-6 md:-ml-12 pt-0 -mt-12 md:-mt-42 z-20 h-[360px] sm:h-[420px] md:h-[480px] animate-fade-in animate-delay-200">
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start justify-center lg:justify-start lg:pl-6 md:-ml-12 pt-0 -mt-12 md:-mt-42 z-20 h-[360px] sm:h-[420px] md:h-[480px] animate-fade-in animate-delay-200">
             <img 
               src={herologo} 
               alt="LIGHTS Logo" 
@@ -81,6 +82,44 @@ export default function Hero() {
               }}
               className="h-auto w-[300px] sm:w-[440px] md:w-[560px] object-contain mix-blend-multiply transition-all duration-300"
             />
+            
+            {/* Logo Text Overlay */}
+            <div className="flex flex-col items-center select-none w-[300px] sm:w-[440px] md:w-[560px] -mt-4 sm:-mt-6 md:-mt-8">
+              {/* Row 1: Tapered Line — EVENT MANAGEMENT — Tapered Line */}
+              <div className="flex items-center justify-center w-full text-[#D4AF37] space-x-2 sm:space-x-3 md:space-x-4">
+                <svg className="h-[4px] w-12 sm:w-16 md:w-20 lg:w-24 fill-current" viewBox="0 0 60 4">
+                  <path d="M 0,2 L 60,0 L 60,4 Z" />
+                </svg>
+                <span 
+                  className="font-serif tracking-[0.2em] uppercase font-semibold whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg"
+                  style={{ fontFamily: "'Cinzel', serif" }}
+                >
+                  Event Management
+                </span>
+                <svg className="h-[4px] w-12 sm:w-16 md:w-20 lg:w-24 fill-current" viewBox="0 0 60 4">
+                  <path d="M 0,0 L 60,2 L 0,4 Z" />
+                </svg>
+              </div>
+
+              {/* Row 2: Central Ornament */}
+              <div className="flex items-center justify-center w-full text-[#D4AF37] mt-1 sm:mt-1.5 md:mt-2">
+                <svg 
+                  className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] h-[10px] sm:h-[12px] md:h-[14px] fill-current" 
+                  viewBox="0 0 200 16"
+                >
+                  <path d="M 100,2 L 105,8 L 100,14 L 95,8 Z" />
+                  <circle cx="88" cy="8" r="1.8" />
+                  <circle cx="112" cy="8" r="1.8" />
+                  <path d="M 30,8 L 80,6.8 L 80,9.2 Z" />
+                  <path d="M 120,6.8 L 170,8 L 120,9.2 Z" />
+                </svg>
+              </div>
+
+              {/* Row 3: BY NDJ GROUPS */}
+              <span className="font-sans tracking-[0.3em] uppercase font-bold text-center text-[9px] sm:text-[10px] md:text-[11px] lg:text-[12px] text-[#D4AF37]/90 mt-1 sm:mt-1.5 md:mt-2">
+                By NDJ Groups
+              </span>
+            </div>
           </div>
 
         </div>

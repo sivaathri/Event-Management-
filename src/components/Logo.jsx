@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../assets/logo3.png';
+import logoImg from '../assets/logo4.png';
 
 export default function Logo({ size = 'sm', light = false }) {
   const isSm = size === 'sm';
@@ -31,13 +31,13 @@ export default function Logo({ size = 'sm', light = false }) {
             WebkitImageRendering: 'optimize-contrast',
           }}
           className={`h-full w-auto object-contain transition-all duration-300 ${
-            light ? 'brightness-0 invert' : 'mix-blend-multiply'
+            light ? 'brightness-0 invert' : ''
           }`}
         />
       </div>
 
       {/* Row 1: Tapered Line — EVENT MANAGEMENT — Tapered Line */}
-      <div className={`flex items-center justify-center w-full ${light ? 'text-white/80' : 'text-brand-emerald'} ${
+      <div className={`flex items-center justify-center w-full ${light ? 'text-white/80' : 'text-[#D4AF37]'} ${
         isSm ? 'space-x-1 sm:space-x-2' : 'space-x-3'
       }`}>
         <TaperLineLeft />
@@ -54,7 +54,7 @@ export default function Logo({ size = 'sm', light = false }) {
 
       {/* Row 2: Central Ornament (Tapered Line -> Dot -> Diamond -> Dot -> Tapered Line) */}
       <div className={`flex items-center justify-center w-full ${
-        light ? 'text-white/60' : 'text-brand-emerald'
+        light ? 'text-white/60' : 'text-[#D4AF37]'
       }`}>
         <svg 
           className={`${isSm ? 'w-[100px] sm:w-[110px] h-[10px]' : 'w-[180px] md:w-[220px] h-[14px]'} fill-current`} 
@@ -79,7 +79,7 @@ export default function Logo({ size = 'sm', light = false }) {
       <span 
         className={`font-sans tracking-[0.3em] uppercase font-bold text-center ${
           isSm ? 'text-[8px] md:text-[9px] -mt-1' : 'text-[10px] md:text-[11px] mt-0.5'
-        } ${light ? 'text-white/70' : 'text-brand-emerald/90'}`}
+        } ${light ? 'text-white/70' : 'text-[#D4AF37]/90'}`}
       >
         By NDJ Groups
       </span>
