@@ -13,7 +13,7 @@ export default function Footer() {
   const services = ['Wedding Planning', 'Corporate Events', 'Birthday Parties', 'Social Events', 'Destination Weddings', 'Exhibition & Trade Shows', 'Venue Management'];
 
   const Divider = () => (
-    <div className="flex items-center mb-3">
+    <div className="flex items-center mb-6">
       <div className="w-6 h-[1.5px] bg-[#c5a880]"></div>
       <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880] mx-1"></div>
       <div className="w-6 h-[1.5px] bg-[#c5a880]"></div>
@@ -21,64 +21,64 @@ export default function Footer() {
   );
 
   return (
-    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-4 mt-auto">
+    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-16 mt-auto">
       
       {/* Decorative Floral Left */}
       <img 
         src={footerf2} 
         alt="" 
-        className="absolute bottom-0 left-0 w-[100px] md:w-[150px] lg:w-[200px] object-contain opacity-90 pointer-events-none z-0"
+        className="absolute bottom-0 left-0 w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-90 pointer-events-none z-0"
       />
       
       {/* Decorative Floral Right - Replace src with your Nano Banana generated image */}
       <img 
         src="/floral-right.png" 
         alt="" 
-        className="absolute bottom-[40px] right-0 w-[100px] md:w-[150px] lg:w-[200px] object-contain opacity-90 pointer-events-none z-0"
+        className="absolute bottom-[40px] right-0 w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-90 pointer-events-none z-0"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-4">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-2 mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
           {/* Column 1: Info */}
-          <div className="md:col-span-12 lg:col-span-4 space-y-1">
-            <div className="-ml-2">
-              <Logo size="lg" light={false} />
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 transform -translate-x-8 lg:-translate-x-16">
+            <div className="flex justify-center lg:justify-start w-full">
+              <Logo size="md" light={false} />
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
+            <p className="text-[15px] text-slate-700 leading-relaxed max-w-[280px] mx-auto lg:mx-0">
               Creating unforgettable celebrations & luxury events with perfection, passion and personalized service.
             </p>
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
-                  <Phone size={14} />
+            <div className="space-y-5 pt-2 w-max mx-auto lg:mx-0 text-left">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
+                  <Phone size={16} />
                 </div>
-                <span className="text-sm pt-1.5 text-slate-600 font-medium">+91 96775 85986</span>
+                <span className="text-[15px] text-slate-700 font-medium">+91 96775 85986</span>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
-                  <Mail size={14} />
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
+                  <Mail size={16} />
                 </div>
-                <span className="text-sm pt-1.5 text-slate-600 font-medium">info@lightsevent.com</span>
+                <span className="text-[15px] text-slate-700 font-medium">info@lightsevent.com</span>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
-                  <MapPin size={14} />
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16] mt-1">
+                  <MapPin size={16} />
                 </div>
-                <span className="text-sm pt-1 leading-snug text-slate-600 font-medium">123, Event Street, Chennai,<br/>Tamil Nadu - 600001, India</span>
+                <span className="text-[15px] leading-[1.6] text-slate-700 font-medium">123, Event Street, Chennai,<br/>Tamil Nadu - 600001, India</span>
               </div>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="md:col-span-4 lg:col-span-2">
+          <div className="md:col-span-4 lg:col-span-2 lg:pl-4">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Quick Links</h4>
             <Divider />
-            <ul className="space-y-0.5">
+            <ul className="space-y-3">
               {quickLinks.map(link => (
                 <li key={link}>
-                  <a href={`/#${link.toLowerCase().replace(' ', '')}`} className="flex items-center text-sm font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                  <a href={`/#${link.toLowerCase().replace(' ', '')}`} className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
                     <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
                     {link}
                   </a>
@@ -91,10 +91,10 @@ export default function Footer() {
           <div className="md:col-span-4 lg:col-span-3">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Our Services</h4>
             <Divider />
-            <ul className="space-y-0.5">
+            <ul className="space-y-3">
               {services.map(service => (
                 <li key={service}>
-                  <a href="/#services" className="flex items-center text-sm font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                  <a href="/#services" className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
                     <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
                     {service}
                   </a>
@@ -107,12 +107,12 @@ export default function Footer() {
           <div className="md:col-span-4 lg:col-span-3 flex flex-col">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Newsletter</h4>
             <Divider />
-            <p className="text-sm text-slate-600 mb-1.5 leading-relaxed font-medium">
+            <p className="text-[14px] text-slate-600 mb-5 leading-relaxed font-medium">
               Subscribe to our newsletter to get the latest updates and offers.
             </p>
             
             {/* Input Box */}
-            <div className="flex items-center bg-white border border-[#e5e7eb] rounded-full p-1 shadow-sm mb-2 relative z-20">
+            <div className="flex items-center bg-white border border-[#e5e7eb] rounded-full p-1 shadow-sm mb-10 relative z-20">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
@@ -148,8 +148,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#e2e8f0] relative z-20 bg-[#FCFBF8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-[13px] text-slate-500 font-medium tracking-wide mb-2 md:mb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-[13px] text-slate-500 font-medium tracking-wide mb-4 md:mb-0">
             © 2024 LIGHTS Event Management. All Rights Reserved.
           </p>
           
@@ -163,7 +163,6 @@ export default function Footer() {
                 <Icon size={14} />
               </a>
             ))}
-            {/* Custom Pinterest Icon */}
             <a 
               href="#" 
               className="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 hover:border-[#052e16] hover:text-[#052e16] hover:bg-slate-50 transition-colors bg-white shadow-sm font-serif font-bold text-sm"

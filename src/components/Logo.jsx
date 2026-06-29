@@ -3,17 +3,19 @@ import logoImg from '../assets/logo4.png';
 
 export default function Logo({ size = 'sm', light = false }) {
   const isSm = size === 'sm';
+  const isMd = size === 'md';
+  const isLg = !isSm && !isMd;
   
   // Tapered Line pointing left (thick on right, thin on left)
   const TaperLineLeft = () => (
-    <svg className={`h-[4px] ${isSm ? 'w-6 sm:w-8' : 'w-12 md:w-16'} fill-current`} viewBox="0 0 60 4">
+    <svg className={`h-[4px] ${isSm ? 'w-6 sm:w-8' : isMd ? 'w-8 sm:w-10 md:w-12' : 'w-12 md:w-16'} fill-current`} viewBox="0 0 60 4">
       <path d="M 0,2 L 60,0 L 60,4 Z" />
     </svg>
   );
 
   // Tapered Line pointing right (thick on left, thin on right)
   const TaperLineRight = () => (
-    <svg className={`h-[4px] ${isSm ? 'w-6 sm:w-8' : 'w-12 md:w-16'} fill-current`} viewBox="0 0 60 4">
+    <svg className={`h-[4px] ${isSm ? 'w-6 sm:w-8' : isMd ? 'w-8 sm:w-10 md:w-12' : 'w-12 md:w-16'} fill-current`} viewBox="0 0 60 4">
       <path d="M 0,0 L 60,2 L 0,4 Z" />
     </svg>
   );
@@ -22,7 +24,7 @@ export default function Logo({ size = 'sm', light = false }) {
     <div className="flex flex-col items-center select-none font-serif py-1 animate-fade-in">
       
       {/* Top Logo Image ("LIGHTS" cursive) */}
-      <div className={`flex items-center justify-center ${isSm ? 'h-8 sm:h-10 md:h-[42px] mb-1' : 'h-24 sm:h-32 md:h-[200px] mb-4'}`}>
+      <div className={`flex items-center justify-center ${isSm ? 'h-8 sm:h-10 md:h-[42px] mb-1' : isMd ? 'h-16 sm:h-20 md:h-[90px] mb-2' : 'h-24 sm:h-32 md:h-[200px] mb-4'}`}>
         <img 
           src={logoImg} 
           alt="LIGHTS" 
@@ -38,12 +40,12 @@ export default function Logo({ size = 'sm', light = false }) {
 
       {/* Row 1: Tapered Line — EVENT MANAGEMENT — Tapered Line */}
       <div className={`flex items-center justify-center w-full ${light ? 'text-white/80' : 'text-[#D4AF37]'} ${
-        isSm ? 'space-x-1 sm:space-x-2' : 'space-x-3'
+        isSm ? 'space-x-1 sm:space-x-2' : isMd ? 'space-x-2 md:space-x-3' : 'space-x-3'
       }`}>
         <TaperLineLeft />
         <span 
           className={`font-serif tracking-[0.2em] uppercase font-semibold whitespace-nowrap ${
-            isSm ? 'text-[9px] md:text-[10px]' : 'text-xs md:text-sm'
+            isSm ? 'text-[9px] md:text-[10px]' : isMd ? 'text-[10px] md:text-[12px]' : 'text-xs md:text-sm'
           }`}
           style={{ fontFamily: "'Cinzel', serif" }}
         >
@@ -57,7 +59,7 @@ export default function Logo({ size = 'sm', light = false }) {
         light ? 'text-white/60' : 'text-[#D4AF37]'
       }`}>
         <svg 
-          className={`${isSm ? 'w-[100px] sm:w-[110px] h-[10px]' : 'w-[180px] md:w-[220px] h-[14px]'} fill-current`} 
+          className={`${isSm ? 'w-[100px] sm:w-[110px] h-[10px]' : isMd ? 'w-[140px] md:w-[160px] h-[12px]' : 'w-[180px] md:w-[220px] h-[14px]'} fill-current`} 
           viewBox="0 0 200 16"
         >
           {/* Central Diamond Star */}
@@ -78,7 +80,7 @@ export default function Logo({ size = 'sm', light = false }) {
       {/* Row 3: BY NDJ GROUPS */}
       <span 
         className={`font-sans tracking-[0.3em] uppercase font-bold text-center ${
-          isSm ? 'text-[8px] md:text-[9px] -mt-1' : 'text-[10px] md:text-[11px] mt-0.5'
+          isSm ? 'text-[8px] md:text-[9px] -mt-1' : isMd ? 'text-[9px] md:text-[10px]' : 'text-[10px] md:text-[11px] mt-0.5'
         } ${light ? 'text-white/70' : 'text-[#D4AF37]/90'}`}
       >
         By NDJ Groups
