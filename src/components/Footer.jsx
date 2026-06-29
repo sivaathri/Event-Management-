@@ -29,17 +29,17 @@ export default function Footer() {
       <img 
         src={footerf2} 
         alt="" 
-        className="absolute bottom-0 left-0 w-[80px] sm:w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 left-[-10px] lg:left-[-30px] w-[80px] sm:w-[130px] md:w-[160px] lg:w-[200px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
       />
       
       {/* Decorative Floral Right */}
       <img 
         src={footerf1} 
         alt="" 
-        className="absolute bottom-0 right-0 w-[70px] sm:w-[110px] md:w-[180px] lg:w-[250px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 right-[-10px] lg:right-[-20px] w-[70px] sm:w-[110px] md:w-[140px] lg:w-[190px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-6 lg:mb-8">
           
@@ -177,7 +177,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#c5a880]/40 relative z-20 bg-[#FCFBF8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative z-40">
           <p className="text-[13.5px] text-slate-500 font-medium tracking-wide text-center md:text-left">
             © 2026 <span className="font-bold text-[#052e16]">Pondy IT Solutions.</span> All Rights Reserved.
           </p>
