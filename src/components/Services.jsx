@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
 import leaves1 from '../assets/leaves1.png';
+import leaves2 from '../assets/leaves2.png';
 
 const services = [
   { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS' },
@@ -49,6 +50,13 @@ export default function Services() {
         src={leaves1} 
         alt="" 
         className="absolute left-0 top-[5%] md:top-[10%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-100 z-10 pointer-events-none transform -translate-x-[10%]"
+      />
+
+      {/* Right Decorative Leaves */}
+      <img 
+        src={leaves2} 
+        alt="" 
+        className="absolute right-0 bottom-[30%] md:bottom-[45%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-100 z-10 pointer-events-none transform -translate-x-4 md:-translate-x-0"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
