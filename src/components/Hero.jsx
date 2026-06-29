@@ -1,16 +1,20 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Logo from './Logo';
-import herobg from '../assets/herobg.png';
+import herobg from '../assets/herobg9.png';
 import herologo from '../assets/homebg1.png';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-24 pb-16 md:pt-28 md:pb-32 bg-no-repeat overflow-hidden flex items-center bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%]"
-      style={{ backgroundImage: `url(${herobg})` }}
+      className="relative min-h-screen pt-24 pb-16 md:pt-28 md:pb-32 overflow-hidden flex items-center bg-white"
     >
+      {/* Background Image isolated so we can filter its baked-in cream color into pure white */}
+      <div 
+        className="absolute inset-0 z-0 bg-no-repeat bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%] brightness-105 contrast-[1.05]"
+        style={{ backgroundImage: `url(${herobg})` }}
+      />
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
 
