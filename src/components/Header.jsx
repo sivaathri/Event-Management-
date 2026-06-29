@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
 export default function Header() {
@@ -19,13 +20,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const location = useLocation();
+
   const navLinks = [
-    { name: 'Home', href: '#home', active: true },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -56,20 +59,24 @@ export default function Header() {
 
           {/* Center: Desktop Navigation Links */}
           <nav className="hidden md:flex items-center justify-center h-[80px] flex-grow px-4 z-20">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] ${
-                  link.active ? 'text-[#D4AF37]' : 'text-white/90'
-                }`}
-              >
-                {link.name}
-                {link.active && (
-                  <span className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#D4AF37] rounded-full"></span>
-                )}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/#home' && location.pathname === '/');
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] ${
+                    isActive ? 'text-[#D4AF37]' : 'text-white/90'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#D4AF37] rounded-full"></span>
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Right Side: Contact & Button */}
@@ -121,20 +128,24 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[80px] bg-[#021C0D] z-40 border-t border-white/10 animate-fade-in">
           <div className="px-4 pt-6 pb-8 space-y-4 flex flex-col h-full bg-[#021C0D]">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl font-sans text-base font-semibold transition-all ${
-                  link.active 
-                    ? 'bg-white/5 text-[#D4AF37] shadow-sm' 
-                    : 'text-white/80 hover:bg-white/5 hover:text-[#D4AF37]'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/#home' && location.pathname === '/');
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-xl font-sans text-base font-semibold transition-all ${
+                    isActive 
+                      ? 'bg-white/5 text-[#D4AF37] shadow-sm' 
+                      : 'text-white/80 hover:bg-white/5 hover:text-[#D4AF37]'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             
             <div className="pt-6 border-t border-white/10 flex flex-col space-y-4">
               <a 
