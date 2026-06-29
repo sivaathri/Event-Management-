@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import FeaturesBanner from './components/FeaturesBanner';
 import Logo from './components/Logo';
+import BackToTop from './components/BackToTop';
 import { Calendar, User, Mail, FileText, CheckCircle2, ChevronRight, Star, Quote } from 'lucide-react';
 
 export default function App() {
@@ -75,6 +77,9 @@ export default function App() {
 
       {/* Hero Section */}
       <Hero />
+
+      {/* Features Banner */}
+      <FeaturesBanner />
 
       {/* Services Section */}
       <Services />
@@ -459,6 +464,7 @@ export default function App() {
         </div>
       </footer>
 
+      <BackToTop />
     </div>
   );
 }
