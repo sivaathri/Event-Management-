@@ -29,14 +29,14 @@ export default function Footer() {
       <img 
         src={footerf2} 
         alt="" 
-        className="absolute bottom-0 left-0 w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 left-0 w-[80px] sm:w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
       />
       
       {/* Decorative Floral Right */}
       <img 
         src={footerf1} 
         alt="" 
-        className="absolute bottom-0 right-0 w-[130px] md:w-[200px] lg:w-[280px] object-contain opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 right-0 w-[70px] sm:w-[110px] md:w-[180px] lg:w-[250px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-6 lg:mb-8">
           
           {/* Column 1: Info */}
-          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left transform -translate-x-8 lg:-translate-x-16">
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left transform translate-x-0 md:-translate-x-8 lg:-translate-x-16">
             <div className="flex justify-center lg:justify-start w-full">
               <Logo size="md" light={false} />
             </div>
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="md:col-span-4 lg:col-span-2 lg:pl-4 mt-6 lg:mt-10">
+          <div className="md:col-span-4 lg:col-span-2 lg:pl-4 mt-0 md:mt-6 lg:mt-10">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Quick Links</h4>
             <Divider />
             <ul className="space-y-3">
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Our Services */}
-          <div className="md:col-span-4 lg:col-span-3 mt-6 lg:mt-10">
+          <div className="md:col-span-4 lg:col-span-3 mt-0 md:mt-6 lg:mt-10">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Our Services</h4>
             <Divider />
             <ul className="space-y-3">
@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Newsletter & Creative */}
-          <div className="md:col-span-4 lg:col-span-3 flex flex-col mt-6 lg:mt-10">
+          <div className="md:col-span-4 lg:col-span-3 flex flex-col mt-0 md:mt-6 lg:mt-10">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase">Newsletter</h4>
             <Divider />
             <p className="text-[14px] text-slate-600 mb-6 leading-relaxed font-medium">
@@ -155,7 +155,7 @@ export default function Footer() {
               <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
                 LET'S CREATE
               </h5>
-              <div className="text-5xl md:text-4xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
+              <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-4 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
                 Something Beautiful
               </div>
               
@@ -177,8 +177,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#c5a880]/40 relative z-20 bg-[#FCFBF8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-[13.5px] text-slate-500 font-medium tracking-wide mb-4 md:mb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+          <p className="text-[13.5px] text-slate-500 font-medium tracking-wide text-center md:text-left">
             © 2026 <span className="font-bold text-[#052e16]">Pondy IT Solutions.</span> All Rights Reserved.
           </p>
           

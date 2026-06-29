@@ -51,7 +51,7 @@ export default function Header() {
         <div className="flex items-start justify-between">
           
           {/* Left Side: Logo (positioned inside the deep panel) */}
-          <div className="h-[120px] flex items-center pl-4 sm:pl-6 md:pl-8 z-20">
+          <div className="h-[120px] flex items-center pl-2 sm:pl-6 md:pl-8 z-20">
             <a href="#home" className="hover:opacity-90 transition-opacity">
               <Logo size="sm" />
             </a>
@@ -80,7 +80,7 @@ export default function Header() {
           </nav>
 
           {/* Right Side: Contact & Button */}
-          <div className="flex items-center justify-end h-[80px] z-20 pr-4 sm:pr-8 lg:pr-12">
+          <div className="flex items-center justify-end h-[80px] z-20 pr-2 sm:pr-8 lg:pr-12">
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-6">
               {/* Phone Number with outline circle */}

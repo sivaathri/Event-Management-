@@ -8,13 +8,8 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen pt-28 pb-32 bg-no-repeat overflow-hidden flex items-center"
-      style={{ 
-        backgroundImage: `url(${herobg})`,
-        backgroundSize: "auto 85%",
-        backgroundPosition: "right center",
-      
-      }}
+      className="relative min-h-screen pt-28 pb-32 bg-no-repeat overflow-hidden flex items-center bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%]"
+      style={{ backgroundImage: `url(${herobg})` }}
     >
       <div className="w-full ml-16 pl-4 sm:pl-8 lg:pl-16 pr-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
@@ -51,7 +46,7 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
               <a 
                 href="#contact" 
                 className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-[#021C0D] text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"

@@ -8,7 +8,7 @@ import PortfolioPage from './pages/PortfolioPage';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-brand-emerald/20 selection:text-brand-dark">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-brand-emerald/20 selection:text-brand-dark overflow-x-hidden w-full relative">
       {/* Navigation Header */}
       <Header />
 
