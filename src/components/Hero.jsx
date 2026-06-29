@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Logo from './Logo';
-import herobg from '../assets/herobg.png';
+import herobg from '../assets/herobg3.png';
 import herologo from '../assets/homebg1.png';
 
 export default function Hero() {
