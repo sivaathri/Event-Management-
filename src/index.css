@@ -47,6 +47,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply antialiased text-slate-800 bg-white font-sans overflow-x-hidden;
   }

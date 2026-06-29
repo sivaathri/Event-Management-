@@ -29,7 +29,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex-grow">
+    <main className="flex-grow animate-fade-in">
       {/* Hero Section */}
       <Hero />
 

@@ -28,7 +28,7 @@ export default function Header() {
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'About Us', href: '/#about' },
     { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -61,6 +61,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center justify-center h-[80px] flex-grow px-4 z-20">
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
                 <Link
@@ -95,13 +96,13 @@ export default function Header() {
               </a>
 
               {/* Get a Quote Button */}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-[10px] font-bold uppercase tracking-widest rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
               >
                 Get a Quote
                 <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Action */}
@@ -130,6 +131,7 @@ export default function Header() {
           <div className="px-4 pt-6 pb-8 space-y-4 flex flex-col h-full bg-[#021C0D]">
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
                 <Link
@@ -161,14 +163,14 @@ export default function Header() {
                 </div>
               </a>
 
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center py-4 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-sm font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all"
               >
                 Get a Quote
                 <ArrowRight size={16} className="ml-2" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

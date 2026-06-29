@@ -12,7 +12,7 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <main className="flex-grow pt-24 bg-white">
+    <main className="flex-grow pt-24 bg-white animate-fade-in">
       <section id="portfolio" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}

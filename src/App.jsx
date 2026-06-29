@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import Home from './pages/Home';
 import PortfolioPage from './pages/PortfolioPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
       {/* Footer */}
