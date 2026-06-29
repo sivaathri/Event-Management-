@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import FeaturesBanner from './components/FeaturesBanner';
+import StatsBanner from './components/StatsBanner';
 import Logo from './components/Logo';
 import BackToTop from './components/BackToTop';
 import { Calendar, User, Mail, FileText, CheckCircle2, ChevronRight, Star, Quote } from 'lucide-react';
@@ -83,6 +84,9 @@ export default function App() {
 
       {/* Services Section */}
       <Services />
+
+      {/* Stats Banner Section */}
+      <StatsBanner />
 
       {/* Portfolio Gallery Section */}
       <section id="portfolio" className="py-24 bg-white">
@@ -240,175 +244,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact & Consultation Form */}
-      <section id="contact" className="py-24 bg-cream-light relative overflow-hidden">
-        {/* Decorative corner flourishes */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-soft rounded-full filter blur-3xl opacity-40 -z-10 animate-pulse-subtle"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-light/20 rounded-full filter blur-3xl opacity-30 -z-10 animate-pulse-subtle animate-delay-200"></div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          
-          {/* Card Container */}
-          <div className="bg-white rounded-[32px] shadow-2xl border border-slate-100 overflow-hidden grid grid-cols-1 md:grid-cols-12">
-            
-            {/* Left Col: Contact Info / Gold Card */}
-            <div className="md:col-span-5 bg-brand-emerald text-white p-8 sm:p-12 flex flex-col justify-between text-left">
-              <div className="space-y-6">
-                <Logo size="sm" light={true} />
-                <div className="pt-8 space-y-4">
-                  <h3 className="font-serif text-xl font-medium tracking-wide">Let's Design Your Dream Event</h3>
-                  <p className="text-sm text-white/80 font-sans font-light leading-relaxed">
-                    Contact us for a bespoke layout, theme consultation, and tailored quotation.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4 pt-10 border-t border-white/10 mt-8">
-                <div>
-                  <p className="text-xs text-gold-light uppercase tracking-widest font-semibold">Phone Helpline</p>
-                  <a href="tel:+919677585986" className="text-base font-semibold tracking-wider hover:underline block mt-0.5">
-                    +91 96775 85986
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs text-gold-light uppercase tracking-widest font-semibold">Email Inquiry</p>
-                  <a href="mailto:info@lightsevents.com" className="text-base font-semibold hover:underline block mt-0.5">
-                    info@lightsevents.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Col: Consultation Form */}
-            <div className="md:col-span-7 p-8 sm:p-12 text-left">
-              <h3 className="font-serif text-2xl text-slate-800 font-semibold mb-6">
-                Request Consultation
-              </h3>
-
-              {formSubmitted ? (
-                <div className="bg-brand-soft border border-brand-emerald/10 text-brand-emerald p-6 rounded-2xl flex flex-col items-center justify-center text-center h-full min-h-[300px]">
-                  <CheckCircle2 size={48} className="text-brand-emerald mb-4 animate-bounce" />
-                  <h4 className="font-serif text-xl font-bold">Request Received!</h4>
-                  <p className="text-sm font-sans text-slate-600 mt-2 max-w-xs font-light">
-                    Our luxury design consultant will get in touch with you at the earliest via phone call or email.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Name */}
-                    <div className="relative">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Your Name</label>
-                      <div className="relative">
-                        <User size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-                        <input 
-                          type="text" 
-                          name="name"
-                          required
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Rahul Sharma"
-                          className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="relative">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Phone Number</label>
-                      <div className="relative">
-                        <input 
-                          type="tel" 
-                          name="phone"
-                          required
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder="+91 98765 43210"
-                          className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Email & Event Type */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="relative">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Email Address</label>
-                      <div className="relative">
-                        <Mail size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-                        <input 
-                          type="email" 
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="rahul@example.com"
-                          className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Event Category</label>
-                      <select 
-                        name="eventType"
-                        value={formData.eventType}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans"
-                      >
-                        <option value="Wedding">Luxury Wedding</option>
-                        <option value="Corporate">Corporate Gala</option>
-                        <option value="Social">Social Celebration</option>
-                        <option value="Theme Decor">Theme Decor Only</option>
-                        <option value="Production">Production Setup</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Date of Event */}
-                  <div>
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Event Date</label>
-                    <div className="relative">
-                      <Calendar size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-                      <input 
-                        type="date" 
-                        name="eventDate"
-                        required
-                        value={formData.eventDate}
-                        onChange={handleInputChange}
-                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans text-slate-600"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Special Requests */}
-                  <div>
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-slate-400 block mb-1">Special Requirements</label>
-                    <textarea 
-                      name="message"
-                      rows="3"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your stage theme, flower preferences or layout requests..."
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-brand-emerald focus:bg-white rounded-xl text-sm transition-colors outline-none font-sans resize-none"
-                    ></textarea>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button 
-                    type="submit"
-                    className="w-full py-4 bg-brand-emerald hover:bg-brand-medium text-white text-xs font-bold uppercase tracking-widest rounded-xl shadow-lg transition-all duration-300"
-                  >
-                    Submit Consultation Request
-                  </button>
-                </form>
-              )}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+ 
       {/* Footer */}
       <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-white/10 text-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
