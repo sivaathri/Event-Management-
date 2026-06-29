@@ -1,107 +1,107 @@
 import React from 'react';
-import { Heart, Briefcase, PartyPopper, Sparkles, Volume2, Utensils, ArrowRight } from 'lucide-react';
+import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
 
 const services = [
-  {
-    icon: Heart,
-    title: 'Luxury Weddings',
-    desc: 'From royal mandaps to magnificent stage decors, we curate wedding designs that reflect your unique love story.',
-  },
-  {
-    icon: Briefcase,
-    title: 'Corporate Events',
-    desc: 'Flawless execution for seminars, product launches, annual galas, and branding setups with premium aesthetics.',
-  },
-  {
-    icon: PartyPopper,
-    title: 'Social Gatherings',
-    desc: 'Enchanting themes and styling for private milestones, anniversaries, birthdays, and theme celebrations.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Theme Decor & Backdrops',
-    desc: 'Custom-crafted stage panels, photobooth setups, and thematic entry paths that captivate your guests.',
-  },
-  {
-    icon: Volume2,
-    title: 'Lighting & Sounds',
-    desc: 'Immersive sound engineering and architectural uplighting to create the perfect mood and visual splendor.',
-  },
-  {
-    icon: Utensils,
-    title: 'Catering & Hospitality',
-    desc: 'Delectable multi-cuisine food experiences styled in beautiful displays with top-tier hospitality management.',
-  },
+  { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS' },
+  { icon: PartyPopper, title: 'BIRTHDAY\nPARTIES' },
+  { icon: Presentation, title: 'STAGE\nDECORATION' },
+  { icon: Camera, title: 'PHOTOGRAPHY &\nVIDEOGRAPHY' },
+  { icon: Headphones, title: 'DJ &\nENTERTAINMENT' },
+  { icon: Speaker, title: 'SOUND &\nLIGHTS' },
+  { icon: ConciergeBell, title: 'CATERING\nSERVICES' },
+  { icon: Shield, title: 'BOUNCERS\nSERVICES' },
 ];
 
-// Custom Leaf Ornament SVG component
-const Ornament = () => (
-  <svg className="w-16 h-8 text-gold mx-4" viewBox="0 0 100 30" fill="currentColor">
-    <path d="M50 0 C40 10 30 12 10 12 C5 12 0 14 0 15 C0 16 5 18 10 18 C30 18 40 20 50 30 C60 20 70 18 90 18 C95 18 100 16 100 15 C100 14 95 12 90 12 C70 12 60 10 50 0 Z" className="opacity-80" />
-    <circle cx="50" cy="15" r="4" className="text-brand-emerald" />
-  </svg>
+const SectionOrnament = () => (
+  <div className="flex items-center justify-center w-full">
+    <div className="flex items-center">
+      <div className="w-16 sm:w-24 h-[1.5px] bg-[#c5a880]"></div>
+      <div className="w-2 h-2 rotate-45 bg-[#c5a880] ml-2 mr-3 opacity-90"></div>
+    </div>
+    
+    <div className="text-[#c5a880] flex items-center justify-center drop-shadow-sm">
+      <svg width="32" height="24" viewBox="0 0 32 24" fill="currentColor">
+        {/* Top central leaf */}
+        <path d="M16 0 C16 0 19 6 20 8 C18 10 16 12 16 12 C16 12 14 10 12 8 C13 6 16 0 16 0 Z" />
+        {/* Left leaf */}
+        <path d="M13.5 10 C9 8 3 8 3 8 C3 8 6 14 12 14 C12 14 14 12 13.5 10 Z" />
+        {/* Right leaf */}
+        <path d="M18.5 10 C23 8 29 8 29 8 C29 8 26 14 20 14 C20 14 18 12 18.5 10 Z" />
+        {/* Base petal */}
+        <path d="M16 12 L19 18 C17.5 19 14.5 19 13 18 Z" />
+      </svg>
+    </div>
+
+    <div className="flex items-center">
+      <div className="w-2 h-2 rotate-45 bg-[#c5a880] ml-3 mr-2 opacity-90"></div>
+      <div className="w-16 sm:w-24 h-[1.5px] bg-[#c5a880]"></div>
+    </div>
+  </div>
 );
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-28 bg-cream-light overflow-hidden">
-      
-      {/* Decorative floral backgrounds */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-soft rounded-full filter blur-3xl opacity-30 -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gold-light/10 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-
+    <section id="services" className="relative py-24 bg-[#FAFAFA] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="flex items-center justify-center w-full mb-2">
-            {/* Left Horizontal Line with Flourish */}
-            <div className="hidden sm:block h-[1px] bg-gradient-to-r from-transparent via-gold to-gold flex-grow max-w-[150px]"></div>
-            <Ornament />
-            <div className="hidden sm:block h-[1px] bg-gradient-to-l from-transparent via-gold to-gold flex-grow max-w-[150px]"></div>
-          </div>
+          
+          <SectionOrnament />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-emerald tracking-wider font-semibold">
+          <div className="flex items-center justify-center gap-3 text-[#c5a880] font-bold uppercase tracking-[0.15em] text-[16px] sm:text-[18px] mt-4 mb-3">
+            <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
             OUR SERVICES
+            <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-dark font-semibold max-w-2xl leading-tight mb-6">
+            Everything You Need <br/> For A Perfect Event
           </h2>
-          <p className="text-sm md:text-base text-slate-500 font-sans tracking-wide mt-3 font-light max-w-lg">
-            Everything you need for a perfect event
-          </p>
+          
+          <SectionOrnament />
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((svc, i) => {
             const Icon = svc.icon;
             return (
               <div 
-                key={svc.title}
-                className="group relative bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-brand-emerald/10 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-start text-left overflow-hidden"
+                key={i} 
+                className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1"
               >
-                {/* Gold corner accent on card hover */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gold/10 to-transparent rounded-tr-2xl transform scale-0 group-hover:scale-100 transition-transform duration-300 origin-top-right"></div>
-                
-                {/* Service Icon Container */}
-                <div className="w-14 h-14 rounded-xl bg-brand-soft text-brand-emerald flex items-center justify-center mb-6 group-hover:bg-brand-emerald group-hover:text-white transition-all duration-300">
-                  <Icon size={24} className="transform group-hover:rotate-6 transition-transform" />
+                {/* Icon Circle */}
+                <div className="relative w-[88px] h-[88px] mb-6">
+                  {/* Outer Gold Ring */}
+                  <div className="absolute inset-0 rounded-full border border-[#c5a880] shadow-[0_4px_12px_rgba(197,168,128,0.25)]"></div>
+                  {/* Inner Green Circle */}
+                  <div className="absolute inset-[4px] rounded-full bg-[#052e16] flex items-center justify-center">
+                    <Icon className="text-[#c5a880] w-[34px] h-[34px]" strokeWidth={1.5} />
+                  </div>
                 </div>
-
-                {/* Service Details */}
-                <h3 className="text-xl font-serif font-semibold text-slate-900 mb-3 group-hover:text-brand-emerald transition-colors">
+                
+                {/* Title */}
+                <h3 className="text-[14px] font-bold text-[#052e16] tracking-wide mb-6 flex-grow flex items-center justify-center whitespace-pre-line leading-relaxed">
                   {svc.title}
                 </h3>
-                <p className="text-sm text-slate-500 font-sans leading-relaxed mb-6 font-light">
-                  {svc.desc}
-                </p>
-
-                {/* Learn More / CTA inside Card */}
-                <button className="mt-auto inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-emerald hover:text-brand-medium group/btn">
-                  Explore Designs
-                  <ArrowRight size={14} className="ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" />
+                
+                {/* Read More Link */}
+                <button className="flex items-center text-[12px] font-bold text-[#052e16] hover:text-[#c5a880] transition-colors uppercase tracking-widest group">
+                  READ MORE
+                  <ArrowRight className="w-4 h-4 ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             );
           })}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-16 flex justify-center">
+          <button className="bg-brand-dark hover:bg-brand-emerald text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex items-center shadow-xl transition-all duration-300 hover:shadow-brand-dark/20 transform hover:-translate-y-0.5">
+            VIEW ALL SERVICES
+            <ArrowRight className="w-4 h-4 ml-3 text-gold" />
+          </button>
         </div>
 
       </div>
