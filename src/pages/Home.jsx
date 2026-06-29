@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import FeaturesBanner from '../components/FeaturesBanner';
 import Services from '../components/Services';
 import StatsBanner from '../components/StatsBanner';
+import ProcessSection from '../components/ProcessSection';
 import { CheckCircle2, Star, Quote } from 'lucide-react';
 
 export default function Home() {
@@ -40,6 +41,9 @@ export default function Home() {
 
       {/* Stats Banner Section */}
       <StatsBanner />
+
+      {/* Process Section */}
+      <ProcessSection />
 
       {/* About Us & Stats Section */}
       <section id="about" className="py-24 bg-cream-light relative overflow-hidden">

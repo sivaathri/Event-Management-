@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
+import leaves1 from '../assets/leaves1.png';
 
 const services = [
   { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS' },
@@ -41,7 +42,15 @@ const SectionOrnament = () => (
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 bg-[#FAFAFA] overflow-hidden">
+    <section id="services" className="relative py-16 bg-[#FAFAFA] overflow-hidden">
+      
+      {/* Left Decorative Leaves */}
+      <img 
+        src={leaves1} 
+        alt="" 
+        className="absolute left-0 top-[5%] md:top-[10%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-100 z-10 pointer-events-none transform -translate-x-[10%]"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}
