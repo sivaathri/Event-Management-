@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ChevronRight, Send } from 'lucide-react';
 import footerf2 from '../assets/footerf2.png';
+import footerf1 from '../assets/footerf1.png';
 import Logo from './Logo';
 
 const Facebook = (props) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>;
@@ -14,14 +15,14 @@ export default function Footer() {
 
   const Divider = () => (
     <div className="flex items-center mb-6">
-      <div className="w-6 h-[1.5px] bg-[#c5a880]"></div>
-      <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880] mx-1"></div>
-      <div className="w-6 h-[1.5px] bg-[#c5a880]"></div>
+      <div className="w-10 h-[1px] bg-[#c5a880]"></div>
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880] mx-1.5"></div>
+      <div className="w-10 h-[1px] bg-[#c5a880]"></div>
     </div>
   );
 
   return (
-    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-16 mt-auto">
+    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-4 mt-auto">
       
       {/* Decorative Floral Left */}
       <img 
@@ -30,49 +31,53 @@ export default function Footer() {
         className="absolute bottom-0 left-0 w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-90 pointer-events-none z-0"
       />
       
-      {/* Decorative Floral Right - Replace src with your Nano Banana generated image */}
+      {/* Decorative Floral Right */}
       <img 
-        src="/floral-right.png" 
+        src={footerf1} 
         alt="" 
-        className="absolute bottom-[40px] right-0 w-[130px] md:w-[200px] lg:w-[240px] object-contain opacity-90 pointer-events-none z-0"
+        className="absolute bottom-[40px] right-0 w-[90px] md:w-[150px] lg:w-[200px] object-contain opacity-90 pointer-events-none z-0"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-6 lg:mb-8">
           
           {/* Column 1: Info */}
-          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 transform -translate-x-8 lg:-translate-x-16">
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left transform -translate-x-8 lg:-translate-x-16">
             <div className="flex justify-center lg:justify-start w-full">
               <Logo size="md" light={false} />
             </div>
-            <p className="text-[15px] text-slate-700 leading-relaxed max-w-[280px] mx-auto lg:mx-0">
-              Creating unforgettable celebrations & luxury events with perfection, passion and personalized service.
-            </p>
-            <div className="space-y-5 pt-2 w-max mx-auto lg:mx-0 text-left">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
-                  <Phone size={16} />
+            
+            {/* Text & Contact Info Container */}
+            <div className="flex flex-col space-y-6 w-full">
+              <p className="text-[15px] text-slate-700 leading-relaxed max-w-[280px] mx-auto lg:mx-0">
+                Creating unforgettable celebrations & luxury events with perfection, passion and personalized service.
+              </p>
+              <div className="space-y-5 pt-2 w-max mx-auto lg:mx-0 text-left">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
+                    <Phone size={16} />
+                  </div>
+                  <span className="text-[15px] text-slate-700 font-medium">+91 96775 85986</span>
                 </div>
-                <span className="text-[15px] text-slate-700 font-medium">+91 96775 85986</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
-                  <Mail size={16} />
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
+                    <Mail size={16} />
+                  </div>
+                  <span className="text-[15px] text-slate-700 font-medium">info@lightsevent.com</span>
                 </div>
-                <span className="text-[15px] text-slate-700 font-medium">info@lightsevent.com</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16] mt-1">
-                  <MapPin size={16} />
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16] mt-1">
+                    <MapPin size={16} />
+                  </div>
+                  <span className="text-[15px] leading-[1.6] text-slate-700 font-medium">123, Event Street, Chennai,<br/>Tamil Nadu - 600001, India</span>
                 </div>
-                <span className="text-[15px] leading-[1.6] text-slate-700 font-medium">123, Event Street, Chennai,<br/>Tamil Nadu - 600001, India</span>
               </div>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="md:col-span-4 lg:col-span-2 lg:pl-4">
+          <div className="md:col-span-4 lg:col-span-2 lg:pl-4 mt-6 lg:mt-10">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Quick Links</h4>
             <Divider />
             <ul className="space-y-3">
@@ -88,7 +93,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Our Services */}
-          <div className="md:col-span-4 lg:col-span-3">
+          <div className="md:col-span-4 lg:col-span-3 mt-6 lg:mt-10">
             <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Our Services</h4>
             <Divider />
             <ul className="space-y-3">
@@ -104,44 +109,67 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Newsletter & Creative */}
-          <div className="md:col-span-4 lg:col-span-3 flex flex-col">
-            <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Newsletter</h4>
+          <div className="md:col-span-4 lg:col-span-3 flex flex-col mt-6 lg:mt-10">
+            <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase">Newsletter</h4>
             <Divider />
-            <p className="text-[14px] text-slate-600 mb-5 leading-relaxed font-medium">
+            <p className="text-[14px] text-slate-600 mb-6 leading-relaxed font-medium">
               Subscribe to our newsletter to get the latest updates and offers.
             </p>
             
             {/* Input Box */}
-            <div className="flex items-center bg-white border border-[#e5e7eb] rounded-full p-1 shadow-sm mb-10 relative z-20">
+            <div className="flex items-center bg-white border border-[#c5a880]/40 rounded-xl p-1 shadow-sm mb-12 relative z-20">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="flex-grow bg-transparent px-4 py-2 text-sm outline-none placeholder:text-slate-400"
+                className="flex-grow bg-transparent px-3 py-2.5 text-[15px] outline-none placeholder:text-slate-500 font-medium text-slate-700 w-full"
               />
-              <button className="bg-[#052e16] hover:bg-[#0a4221] text-white p-2.5 rounded-full transition-colors flex-shrink-0">
-                <Send size={16} className="-ml-0.5" />
+              <button className="bg-[#052e16] hover:bg-[#0a4221] text-white p-3 rounded-lg transition-colors flex-shrink-0 shadow-md">
+                <Send size={18} className="-ml-0.5" />
               </button>
             </div>
 
             {/* Creative Signature */}
-            <div className="text-center md:text-left flex flex-col items-center md:items-start mt-auto">
-              {/* Wide Divider */}
-              <div className="flex items-center justify-center mb-5 w-full md:w-auto">
-                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
-                <div className="w-1.5 h-1.5 rotate-45 bg-transparent border border-[#c5a880] mx-1"></div>
-                <div className="w-1.5 h-1.5 rotate-45 bg-transparent border border-[#c5a880] mx-0.5"></div>
-                <div className="w-1.5 h-1.5 rotate-45 bg-transparent border border-[#c5a880] mx-1"></div>
-                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
+            <div className="flex flex-col items-center mt-6">
+              {/* Ornate Divider */}
+              <div className="flex items-center justify-center mb-5 w-full">
+                <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
+                
+                <div className="flex items-center mx-1">
+                  <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
+                    <path d="M0 6 C8 6 12 1 16 6 C18 9 21 9 24 6" />
+                  </svg>
+                  
+                  <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-1">
+                    <div className="w-[3px] h-[3px] bg-[#c5a880]"></div>
+                  </div>
+                  
+                  <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
+                    <path d="M24 6 C16 6 12 1 8 6 C6 9 3 9 0 6" />
+                  </svg>
+                </div>
+
+                <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
               </div>
-              <h5 className="font-serif text-[#052e16] font-bold tracking-[0.2em] uppercase text-[13px]">
+              
+              <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
                 LET'S CREATE
               </h5>
-              <div className="mt-2 text-4xl text-[#c5a880] pr-4" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
+              <div className="text-5xl md:text-4xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
                 Something Beautiful
+              </div>
+              
+              {/* Bottom Divider */}
+              <div className="flex items-center justify-center mt-5 w-full">
+                <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
+                <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-3">
+                  <div className="w-[3px] h-[3px] bg-[#c5a880]"></div>
+                </div>
+                <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
               </div>
             </div>
 
           </div>
+        
         </div>
 
       </div>
