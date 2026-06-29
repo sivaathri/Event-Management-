@@ -8,22 +8,22 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen pt-28 pb-32 bg-no-repeat overflow-hidden flex items-center bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%]"
+      className="relative min-h-screen pt-[130px] pb-10 md:pt-36 md:pb-24 bg-no-repeat overflow-hidden flex items-center bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%]"
       style={{ backgroundImage: `url(${herobg})` }}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
           
           {/* Left Column: Copy & Actions */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start text-left space-y-6 z-20 animate-slide-up">
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start text-left space-y-3 sm:space-y-6 z-20">
             
             {/* Tagline */}
-            <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-brand-emerald">
+            <span className="text-[10px] sm:text-xs md:text-sm font-sans font-bold uppercase tracking-widest sm:tracking-[0.2em] text-brand-emerald">
               We Plan • We Manage • You Celebrate
             </span>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[54px] font-serif text-slate-800 leading-[1.12] font-normal tracking-wide">
+            <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-5xl xl:text-[54px] font-serif text-slate-800 leading-[1.12] font-normal tracking-wide">
               Creating Unforgettable{' '}
               <span className="block text-brand-emerald mt-2 font-medium">
                 Celebrations &
@@ -41,12 +41,12 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-sm md:text-base text-slate-500 max-w-md leading-relaxed font-sans font-light">
+            <p className="text-[13px] sm:text-sm md:text-base text-slate-500 max-w-sm md:max-w-md leading-relaxed font-sans font-light">
               From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary experiences.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 w-full sm:w-auto">
               <a 
                 href="#contact" 
                 className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-[#021C0D] text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Large Logo overlaying the background stage image */}
-          <div className="md:col-span-6 lg:col-span-7 flex flex-col items-center md:items-start justify-center md:justify-start pt-0 mt-8 md:mt-0 z-20 h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] animate-fade-in animate-delay-200">
+          <div className="md:col-span-6 lg:col-span-7 flex flex-col items-center md:items-start justify-center md:justify-start pt-0 mt-4 md:mt-0 z-20 h-[200px] sm:h-[300px] md:h-[420px] lg:h-[480px]">
             <img 
               src={herologo} 
               alt="LIGHTS Logo" 
