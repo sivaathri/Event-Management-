@@ -11,11 +11,11 @@ export default function Hero() {
       className="relative min-h-screen pt-28 pb-32 bg-no-repeat overflow-hidden flex items-center bg-cover bg-center lg:bg-right lg:bg-[length:auto_85%]"
       style={{ backgroundImage: `url(${herobg})` }}
     >
-      <div className="w-full ml-16 pl-4 sm:pl-8 lg:pl-16 pr-0">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
           
           {/* Left Column: Copy & Actions */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left space-y-6 z-20 animate-slide-up pr-4 sm:pr-8">
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start text-left space-y-6 z-20 animate-slide-up">
             
             {/* Tagline */}
             <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-brand-emerald">
@@ -23,7 +23,7 @@ export default function Hero() {
             </span>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-[54px] font-serif text-slate-800 leading-[1.12] font-normal tracking-wide">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[54px] font-serif text-slate-800 leading-[1.12] font-normal tracking-wide">
               Creating Unforgettable{' '}
               <span className="block text-brand-emerald mt-2 font-medium">
                 Celebrations &
@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Large Logo overlaying the background stage image */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start justify-center lg:justify-start lg:pl-6 md:-ml-12 pt-0 -mt-12 md:-mt-42 z-20 h-[360px] sm:h-[420px] md:h-[480px] animate-fade-in animate-delay-200">
+          <div className="md:col-span-6 lg:col-span-7 flex flex-col items-center md:items-start justify-center md:justify-start pt-0 mt-8 md:mt-0 z-20 h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] animate-fade-in animate-delay-200">
             <img 
               src={herologo} 
               alt="LIGHTS Logo" 
