@@ -15,10 +15,10 @@ export default function Footer() {
   const services = ['Wedding Planning', 'Corporate Events', 'Birthday Parties', 'Social Events', 'Destination Weddings', 'Exhibition & Trade Shows', 'Venue Management'];
 
   const Divider = () => (
-    <div className="flex items-center mb-6">
-      <div className="w-10 h-[1px] bg-[#c5a880]"></div>
-      <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880] mx-1.5"></div>
-      <div className="w-10 h-[1px] bg-[#c5a880]"></div>
+    <div className="flex items-center mb-6 w-full">
+      <div className="h-[1px] bg-[#c5a880] flex-grow"></div>
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880] mx-2 flex-shrink-0"></div>
+      <div className="h-[1px] bg-[#c5a880] flex-grow"></div>
     </div>
   );
 
@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 mb-6 lg:mb-8">
           
           {/* Column 1: Info */}
-          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left transform translate-x-0 md:-translate-x-8 lg:-translate-x-16">
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="flex justify-center lg:justify-start w-full">
               <Logo size="md" light={false} />
             </div>
@@ -79,8 +79,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="md:col-span-4 lg:col-span-2 lg:pl-4 mt-0 md:mt-6 lg:mt-10">
-            <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Quick Links</h4>
-            <Divider />
+            <div className="inline-flex flex-col w-max">
+              <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase mb-1.5">Quick Links</h4>
+              <Divider />
+            </div>
             <ul className="space-y-3">
               {quickLinks.map(link => (
                 <li key={link}>
@@ -95,8 +97,10 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <div className="md:col-span-4 lg:col-span-3 mt-0 md:mt-6 lg:mt-10">
-            <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-sm uppercase">Our Services</h4>
-            <Divider />
+            <div className="inline-flex flex-col w-max">
+              <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase mb-1.5">Our Services</h4>
+              <Divider />
+            </div>
             <ul className="space-y-3">
               {services.map(service => (
                 <li key={service}>
@@ -111,8 +115,10 @@ export default function Footer() {
 
           {/* Column 4: Newsletter & Creative */}
           <div className="md:col-span-4 lg:col-span-3 flex flex-col mt-0 md:mt-6 lg:mt-10">
-            <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase">Newsletter</h4>
-            <Divider />
+            <div className="inline-flex flex-col w-max">
+              <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase mb-1.5">Newsletter</h4>
+              <Divider />
+            </div>
             <p className="text-[14px] text-slate-600 mb-6 leading-relaxed font-medium">
               Subscribe to our newsletter to get the latest updates and offers.
             </p>
