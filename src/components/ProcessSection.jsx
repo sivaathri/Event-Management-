@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageSquare, ClipboardList, Settings, PartyPopper, ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const steps = [
   {
@@ -111,7 +112,7 @@ export default function ProcessSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-20">
+        <ScrollReveal animation="animate-slide-up" className="flex flex-col items-center text-center mb-20">
           <div className="flex items-center justify-center gap-3 text-[#c5a880] font-bold uppercase tracking-[0.15em] text-[14px] mb-4">
             <span className="w-5 h-[2px] bg-[#c5a880] rounded-sm"></span>
             OUR PROCESS
@@ -123,7 +124,7 @@ export default function ProcessSection() {
           </h2>
           
           <SectionOrnament />
-        </div>
+        </ScrollReveal>
 
         {/* Steps Container */}
         <div className="relative mt-8">
@@ -143,7 +144,12 @@ export default function ProcessSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative z-10">
             {steps.map((step, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center">
+              <ScrollReveal 
+                key={idx}
+                animation="animate-slide-up"
+                delay={idx === 0 ? '' : idx === 1 ? 'animate-delay-100' : idx === 2 ? 'animate-delay-200' : 'animate-delay-300'}
+                className="flex flex-col items-center text-center"
+              >
                 {/* Icon Circle */}
                 <div className="relative w-[88px] h-[88px] mb-8">
                   {/* Outer shadow/ring */}
@@ -168,13 +174,13 @@ export default function ProcessSection() {
                 <p className="text-[13px] text-slate-500 font-sans leading-relaxed px-4 max-w-[240px]">
                   {step.desc}
                 </p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* Button */}
-        <div className="mt-20 flex justify-center">
+        <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="mt-20 flex justify-center">
           <a
             href="/#about"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-[#052e16] hover:bg-[#084221] text-white text-[12px] font-bold uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
@@ -182,7 +188,7 @@ export default function ProcessSection() {
             ABOUT US
             <ArrowRight size={16} className="ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
           </a>
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Landmark, HeartHandshake, Target, BadgeCheck } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const stats = [
   {
@@ -38,15 +39,17 @@ export default function StatsBanner() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
         {/* Header Text */}
-        <h3 className="text-[#c5a880] font-serif text-2xl md:text-[28px] mb-3 font-medium tracking-wide drop-shadow-md">
-          We Don't Just Plan Events,
-        </h3>
-        <h2 className="text-[#c5a880] font-serif text-4xl md:text-5xl lg:text-[56px] mb-8 font-semibold tracking-wide drop-shadow-lg">
-          We Create Experiences
-        </h2>
+        <ScrollReveal animation="animate-slide-up">
+          <h3 className="text-[#c5a880] font-serif text-2xl md:text-[28px] mb-3 font-medium tracking-wide drop-shadow-md">
+            We Don't Just Plan Events,
+          </h3>
+          <h2 className="text-[#c5a880] font-serif text-4xl md:text-5xl lg:text-[56px] mb-8 font-semibold tracking-wide drop-shadow-lg">
+            We Create Experiences
+          </h2>
+        </ScrollReveal>
 
         {/* Divider */}
-        <div className="flex items-center justify-center space-x-4 mb-16 w-full max-w-lg">
+        <ScrollReveal animation="animate-fade-in" delay="animate-delay-100" className="flex items-center justify-center space-x-4 mb-16 w-full max-w-lg">
           <div className="h-[1px] bg-[#c5a880] flex-grow opacity-60"></div>
           <div className="text-[#c5a880] drop-shadow-md">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -55,14 +58,19 @@ export default function StatsBanner() {
             </svg>
           </div>
           <div className="h-[1px] bg-[#c5a880] flex-grow opacity-60"></div>
-        </div>
+        </ScrollReveal>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-4 w-full max-w-6xl">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div key={idx} className="flex items-center justify-center lg:justify-start space-x-5">
+              <ScrollReveal 
+                key={idx}
+                animation="animate-slide-up"
+                delay={idx === 0 ? 'animate-delay-100' : idx === 1 ? 'animate-delay-200' : idx === 2 ? 'animate-delay-300' : 'animate-delay-300'}
+                className="flex items-center justify-center lg:justify-start space-x-5"
+              >
                 <Icon className="text-[#c5a880] w-[42px] h-[42px] flex-shrink-0 drop-shadow-md" strokeWidth={1.2} />
                 <div className="flex flex-col text-left">
                   <span className="text-white font-sans font-semibold text-[36px] leading-none mb-1.5 tracking-tight drop-shadow-md">
@@ -72,7 +80,7 @@ export default function StatsBanner() {
                     {stat.label}
                   </span>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

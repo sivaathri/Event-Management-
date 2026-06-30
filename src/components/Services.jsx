@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
 
@@ -62,7 +63,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <ScrollReveal animation="animate-slide-up" className="flex flex-col items-center text-center mb-16">
           
           <SectionOrnament />
 
@@ -77,17 +78,21 @@ export default function Services() {
           </h2>
           
           <SectionOrnament />
-        </div>
+        </ScrollReveal>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((svc, i) => {
             const Icon = svc.icon;
             return (
-              <div 
-                key={i} 
-                className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1"
+              <ScrollReveal 
+                key={i}
+                animation="animate-slide-up"
+                delay={i % 4 === 0 ? '' : i % 4 === 1 ? 'animate-delay-100' : i % 4 === 2 ? 'animate-delay-200' : 'animate-delay-300'}
               >
+                <div 
+                  className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] h-full transition-all duration-300 transform hover:-translate-y-1"
+                >
                 {/* Icon Circle */}
                 <div className="relative w-[88px] h-[88px] mb-6">
                   {/* Outer Gold Ring */}
@@ -108,18 +113,19 @@ export default function Services() {
                   READ MORE
                   <ArrowRight className="w-4 h-4 ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
                 </button>
-              </div>
+                </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* View All Button */}
-        <div className="mt-16 flex justify-center">
+        <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="mt-16 flex justify-center">
           <button className="bg-brand-dark hover:bg-brand-emerald text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex items-center shadow-xl transition-all duration-300 hover:shadow-brand-dark/20 transform hover:-translate-y-0.5">
             VIEW ALL SERVICES
             <ArrowRight className="w-4 h-4 ml-3 text-gold" />
           </button>
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>

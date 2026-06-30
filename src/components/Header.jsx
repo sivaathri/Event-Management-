@@ -67,6 +67,11 @@ export default function Header() {
                 <Link
                   key={link.name}
                   to={link.href}
+                  onClick={() => {
+                    if (!link.href.includes('#')) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] ${
                     isActive ? 'text-[#D4AF37]' : 'text-white/90'
                   }`}
@@ -98,6 +103,7 @@ export default function Header() {
               {/* Get a Quote Button */}
               <Link
                 to="/contact"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-[10px] font-bold uppercase tracking-widest rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
               >
                 Get a Quote
@@ -137,7 +143,12 @@ export default function Header() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (!link.href.includes('#')) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className={`block px-4 py-3 rounded-xl font-sans text-base font-semibold transition-all ${
                     isActive 
                       ? 'bg-white/5 text-[#D4AF37] shadow-sm' 
@@ -165,7 +176,10 @@ export default function Header() {
 
               <Link
                 to="/contact"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="w-full flex items-center justify-center py-4 bg-[#D4AF37] hover:bg-[#c39b2b] text-brand-dark text-sm font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all"
               >
                 Get a Quote

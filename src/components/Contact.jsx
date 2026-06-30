@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Sparkles } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
   return (
@@ -11,7 +12,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <ScrollReveal animation="animate-slide-up" className="flex flex-col items-center text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-serif text-brand-emerald tracking-wider font-semibold">
             GET IN TOUCH
           </h2>
@@ -19,12 +20,12 @@ export default function Contact() {
           <p className="text-sm text-slate-500 font-sans tracking-wide mt-3 font-light max-w-lg">
             Let's start crafting your unforgettable celebration together
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
           {/* Left Column: Contact Info */}
-          <div className="lg:col-span-5 flex flex-col space-y-10">
+          <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="lg:col-span-5 flex flex-col space-y-10">
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-serif text-slate-800 font-medium leading-tight">
                 We'd love to hear about your dream event.
@@ -89,10 +90,10 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7">
+          <ScrollReveal animation="animate-slide-up" delay="animate-delay-200" className="lg:col-span-7">
             <div className="bg-white rounded-3xl shadow-xl shadow-brand-emerald/5 border border-slate-100 p-8 md:p-10 relative overflow-hidden">
               
               <div className="absolute top-0 right-0 p-6 opacity-10 pointer-events-none">
@@ -171,7 +172,7 @@ export default function Contact() {
                 </button>
               </form>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>
