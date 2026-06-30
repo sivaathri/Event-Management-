@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
 
           {/* Left Column: Copy & Actions */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start text-left space-y-4 sm:space-y-6 z-20">
+          <div className="md:col-span-6 lg:col-span-6 xl:col-span-5 flex flex-col items-start text-left space-y-4 sm:space-y-6 z-20 lg:-ml-12 xl:-ml-20">
 
             {/* Tagline */}
             <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-brand-emerald">
