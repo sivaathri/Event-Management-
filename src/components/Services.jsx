@@ -266,7 +266,7 @@ const ServiceDetailView = ({ categoryId }) => {
 
         {/* Right Image */}
         <div className="flex-1 xl:max-w-[55%]">
-          <div className="aspect-[4/3] xl:aspect-[5/4] w-full rounded-[24px] overflow-hidden shadow-2xl">
+          <div className="aspect-[4/3] xl:aspect-[1/1] w-full rounded-[24px] overflow-hidden shadow-2xl">
             <img src={data.image} alt="Service" className="w-full h-full object-cover" />
           </div>
         </div>
