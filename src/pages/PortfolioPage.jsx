@@ -42,7 +42,7 @@ const portfolioItems = [
     category: 'birthdays',
     categoryLabel: 'Birthday Parties',
     icon: Cake,
-    img: 'https://images.unsplash.com/photo-1530103862676-de3c9de59f9e?auto=format&fit=crop&w=600&q=80'
+    img: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80'
   },
   {
     title: 'Live Concert Experience',
