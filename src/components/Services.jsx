@@ -138,14 +138,14 @@ export default function Services() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-grow p-6 py-12 lg:p-12 xl:p-16 bg-white animate-fade-in">
+        <div className="flex-grow px-6 py-8 lg:px-12 lg:py-10 xl:px-16 xl:py-12 bg-white animate-fade-in">
            
            {/* Title Block */}
            <div className="flex flex-col items-center text-center mb-12">
-              <div className="flex items-center gap-4 text-[#c5a880] mb-4">
-                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
-                <span className="font-bold tracking-[0.2em] text-[11px] uppercase">OUR SERVICES</span>
-                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
+              <div className="flex items-center gap-4 text-[#b78d51] mb-4">
+                <div className="w-12 h-[1.5px] bg-[#b78d51]"></div>
+                <span className="font-bold tracking-[0.2em] text-[11.5px] uppercase">OUR SERVICES</span>
+                <div className="w-12 h-[1.5px] bg-[#b78d51]"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[38px] font-serif text-[#052e16] font-semibold tracking-wide">
                 Everything You Need For A Perfect Event
@@ -158,17 +158,17 @@ export default function Services() {
            </div>
 
            {/* Grid */}
-           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
               {servicesList.filter(s => activeCategory === 'all' || s.category === activeCategory).map((svc, idx) => (
-                 <div key={svc.id} className="flex flex-col group cursor-pointer animate-slide-up bg-white p-3 rounded-[24px] border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" style={{ animationDelay: `${idx * 50}ms` }}>
-                    <div className="aspect-[5/4] rounded-[16px] overflow-hidden mb-4">
+                 <div key={svc.id} className="flex flex-col group cursor-pointer animate-slide-up bg-white p-3.5 rounded-[24px] border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style={{ animationDelay: `${idx * 50}ms` }}>
+                    <div className="aspect-[4/3] rounded-[16px] overflow-hidden mb-5">
                        <img src={svc.img} alt={svc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
                     </div>
-                    <div className="px-1 pb-1 flex flex-col flex-grow">
-                      <h3 className="font-sans font-bold text-[#052e16] text-[15px] mb-2 whitespace-pre-line leading-snug tracking-wide group-hover:text-[#c5a880] transition-colors">
+                    <div className="px-1 pb-2 flex flex-col flex-grow">
+                      <h3 className="font-sans font-bold text-[#052e16] text-[16px] mb-2.5 whitespace-pre-line leading-snug group-hover:text-[#b78d51] transition-colors">
                         {svc.title}
                       </h3>
-                      <p className="text-slate-500 font-sans text-[13px] leading-relaxed tracking-wide mt-auto">
+                      <p className="text-slate-500 font-sans text-[13px] leading-[1.6] mt-auto">
                         {svc.desc}
                       </p>
                     </div>
