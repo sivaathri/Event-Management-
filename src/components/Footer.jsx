@@ -161,7 +161,7 @@ export default function Footer() {
               <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
                 LET'S CREATE
               </h5>
-              <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-4 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
+              <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
                 Something Beautiful
               </div>
               
