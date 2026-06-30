@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Award, Users, Star, ArrowRight, Calendar, Rocket, Trophy, Crown } from 'lucide-react';
+import { Heart, Award, Users, Star, ArrowRight, Calendar, Rocket, Trophy, Crown, MapPin, PartyPopper } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
@@ -153,6 +153,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+
       {/* Values Grid Section */}
       <section className="relative pt-12 pb-4 z-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -289,6 +291,102 @@ export default function AboutPage() {
           </div>
 
           <SectionOrnament />
+
+          {/* Stats Banner Section */}
+          <div className="w-full mt-20">
+            <div className="bg-white border border-[#FAF5EB] rounded-[32px] p-6 md:py-10 md:px-12 shadow-[0_8px_30px_rgba(0,0,0,0.015)] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
+              
+              {/* Years of Experience */}
+              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+                <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
+                  <Calendar className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#052e16] font-serif font-bold text-2xl md:text-[28px] leading-tight">10+</span>
+                  <span className="text-slate-500 font-sans text-xs mt-0.5 whitespace-nowrap">Years of Experience</span>
+                </div>
+                {/* Vertical Divider */}
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[55%] border-r border-dashed border-[#e6d5b8]/80"></div>
+              </div>
+
+              {/* Events Completed */}
+              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+                <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
+                  <PartyPopper className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#052e16] font-serif font-bold text-2xl md:text-[28px] leading-tight">500+</span>
+                  <span className="text-slate-500 font-sans text-xs mt-0.5 whitespace-nowrap">Events Completed</span>
+                </div>
+                {/* Vertical Divider */}
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[55%] border-r border-dashed border-[#e6d5b8]/80"></div>
+              </div>
+
+              {/* Happy Clients */}
+              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+                <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
+                  <Users className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#052e16] font-serif font-bold text-2xl md:text-[28px] leading-tight">1000+</span>
+                  <span className="text-slate-500 font-sans text-xs mt-0.5 whitespace-nowrap">Happy Clients</span>
+                </div>
+                {/* Vertical Divider */}
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[55%] border-r border-dashed border-[#e6d5b8]/80"></div>
+              </div>
+
+              {/* Team Members */}
+              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+                <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
+                  <Award className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#052e16] font-serif font-bold text-2xl md:text-[28px] leading-tight">50+</span>
+                  <span className="text-slate-500 font-sans text-xs mt-0.5 whitespace-nowrap">Team Members</span>
+                </div>
+                {/* Vertical Divider */}
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[55%] border-r border-dashed border-[#e6d5b8]/80"></div>
+              </div>
+
+              {/* Cities Served */}
+              <div className="flex items-center space-x-5 justify-center p-2 lg:px-4">
+                <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
+                  <MapPin className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#052e16] font-serif font-bold text-2xl md:text-[28px] leading-tight">5+</span>
+                  <span className="text-slate-500 font-sans text-xs mt-0.5 whitespace-nowrap">Cities Served</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Custom Quote Banner */}
+          <div className="mt-20 bg-[#021C0D] rounded-2xl p-8 lg:px-12 lg:py-10 flex flex-col xl:flex-row items-center justify-between border border-[#D4AF37]/20 shadow-xl animate-fade-in text-white w-full">
+             <div className="flex flex-col md:flex-row items-center mb-8 xl:mb-0 md:space-x-8 text-center md:text-left">
+                <div className="w-16 h-16 rounded-full border border-[#D4AF37] flex items-center justify-center flex-shrink-0 text-[#D4AF37] bg-transparent mb-6 md:mb-0">
+                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="2" y="3" width="20" height="13" rx="2" />
+                      <path d="M12 16v5M8 21h8" />
+                      <circle cx="12" cy="9" r="2.5" />
+                      <path d="M8.5 14a3.5 3.5 0 0 1 7 0" />
+                   </svg>
+                </div>
+                <div className="text-left">
+                   <h4 className="text-xl md:text-2xl font-serif text-[#D4AF37] font-semibold mb-2">
+                     Ready to Plan Your Dream Event?
+                   </h4>
+                   <p className="text-[#a3b3a9] font-sans text-sm md:text-[15px] leading-relaxed max-w-xl">
+                     Let's create a celebration you and your guests will cherish forever.
+                   </p>
+                </div>
+             </div>
+             <Link to="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
+                GET A CUSTOM QUOTE
+                <ArrowRight className="w-4 h-4 ml-3 text-[#021C0D]" />
+             </Link>
+          </div>
         </div>
       </section>
     </main>
