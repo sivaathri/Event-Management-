@@ -95,8 +95,8 @@ export default function AboutPage() {
               <div className="flex gap-4 items-stretch">
                 
                 {/* Left Column of Collage */}
-                <div className="flex-1 flex flex-col gap-4">
-                  <div className="rounded-[20px] overflow-hidden shadow-md aspect-[4/5] relative">
+                <div className="flex-[2.1] flex flex-col gap-4">
+                  <div className="rounded-[20px] overflow-hidden shadow-md aspect-[1.5/1] relative">
                     <img 
                       src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" 
                       alt="Walkway Setup" 
@@ -104,21 +104,21 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="flex gap-3">
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-square">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
                       <img 
                         src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 1" 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-square">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
                       <img 
                         src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 2" 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-square">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
                       <img 
                         src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 3" 
@@ -130,14 +130,14 @@ export default function AboutPage() {
 
                 {/* Right Column of Collage */}
                 <div className="flex-1 flex flex-col gap-4">
-                  <div className="rounded-[20px] overflow-hidden shadow-md aspect-[1.1] relative">
+                  <div className="rounded-[20px] overflow-hidden shadow-md aspect-square relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" 
+                      src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" 
                       alt="Dining Setup" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="rounded-[20px] overflow-hidden shadow-md flex-grow aspect-[3/4] relative">
+                  <div className="rounded-[20px] overflow-hidden shadow-md aspect-square relative">
                     <img 
                       src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" 
                       alt="Purple Stage lighting" 
