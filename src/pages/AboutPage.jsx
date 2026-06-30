@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Award, Users, Star, ArrowRight } from 'lucide-react';
+import { Heart, Award, Users, Star, ArrowRight, Calendar, Rocket, Trophy, Crown } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
@@ -40,27 +40,27 @@ export default function AboutPage() {
       <img src={leaves2} alt="" className="absolute right-0 top-[40%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-80 z-10 pointer-events-none transform translate-x-[20%]" />
 
       {/* Breadcrumb Navigation */}
-      <div className="flex items-center gap-2 text-[13px] font-sans text-slate-500 mt-8 mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="flex items-center gap-2 text-[13px] font-sans text-slate-500 mt-8 mb-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <Link to="/" className="hover:text-[#b78d51] transition-colors">Home</Link>
         <span className="text-[#c5a880] font-sans font-bold">&gt;</span>
         <span className="text-slate-800 font-sans font-medium">About Us</span>
       </div>
 
-      {/* Main Section */}
       <section className="relative pb-16 z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12 xl:gap-16">
             
             {/* Left Content Column */}
-            <div className="flex-1 text-left">
+            <div className="flex-[0.7] text-left">
               <div className="flex items-center gap-3 text-[#c5a880] mb-4">
                 <div className="w-12 h-[1px] bg-[#c5a880]"></div>
                 <span className="text-[11px] font-bold tracking-[0.25em] uppercase">ABOUT US</span>
                 <div className="w-12 h-[1px] bg-[#c5a880]"></div>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-serif text-[#052e16] font-semibold leading-[1.15] mb-6">
-                Crafting Moments,<br/>Creating Memories
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#052e16] font-semibold leading-[1.25] mb-6">
+                <span className="whitespace-nowrap inline-block">Crafting Moments,</span><br />
+                <span className="whitespace-nowrap inline-block">Creating Memories</span>
               </h2>
 
               <div className="flex items-center gap-2 text-[#c5a880] mb-8">
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Collage Column */}
-            <div className="flex-1 w-full max-w-lg lg:max-w-none">
+            <div className="flex-[1.3] w-full max-w-lg lg:max-w-none">
               <div className="flex gap-4 items-stretch">
                 
                 {/* Left Column of Collage */}
@@ -104,21 +104,21 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="flex gap-3">
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[1.2/1]">
                       <img 
                         src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 1" 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[1.2/1]">
                       <img 
                         src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 2" 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[4/3]">
+                    <div className="rounded-xl overflow-hidden shadow-sm flex-1 aspect-[1.2/1]">
                       <img 
                         src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=300&q=80" 
                         alt="Event Detail 3" 
@@ -154,50 +154,56 @@ export default function AboutPage() {
       </section>
 
       {/* Values Grid Section */}
-      <section className="relative py-12 z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-[#f0eae1] rounded-[24px] p-8 md:p-10 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.03)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-slate-100">
+      <section className="relative pt-12 pb-4 z-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-[#FAF5EB] rounded-[32px] p-8 md:py-14 md:px-12 shadow-[0_8px_30px_rgba(0,0,0,0.015)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             
             {/* Passion */}
-            <div className="flex flex-col items-center text-center p-4 lg:first:pl-0 lg:pl-8">
-              <div className="w-14 h-14 rounded-full border border-[#e6d5b8] bg-[#FAF5EB]/50 flex items-center justify-center mb-5 text-[#c5a880]">
-                <Heart className="w-6 h-6 stroke-[1.5]" />
+            <div className="flex flex-col items-center text-center p-4 relative lg:px-8">
+              <div className="w-20 h-20 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center mb-6 text-[#c5a880] shadow-sm">
+                <Heart className="w-7 h-7 stroke-[1.5]" />
               </div>
-              <h4 className="font-sans font-bold text-[#052e16] text-[16px] mb-3">Our Passion</h4>
-              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed">
+              <h4 className="font-sans font-bold text-[#052e16] text-[16px] md:text-[17px] mb-3">Our Passion</h4>
+              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
                 We are passionate about creating beautiful events that touch hearts and create lasting memories.
               </p>
+              {/* Vertical Divider */}
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[65%] border-r border-dashed border-[#e6d5b8]/80"></div>
             </div>
 
             {/* Commitment */}
-            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 lg:pl-8">
-              <div className="w-14 h-14 rounded-full border border-[#e6d5b8] bg-[#FAF5EB]/50 flex items-center justify-center mb-5 text-[#c5a880]">
-                <Award className="w-6 h-6 stroke-[1.5]" />
+            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 relative lg:px-8">
+              <div className="w-20 h-20 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center mb-6 text-[#c5a880] shadow-sm">
+                <Award className="w-7 h-7 stroke-[1.5]" />
               </div>
-              <h4 className="font-sans font-bold text-[#052e16] text-[16px] mb-3">Our Commitment</h4>
-              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed">
+              <h4 className="font-sans font-bold text-[#052e16] text-[16px] md:text-[17px] mb-3">Our Commitment</h4>
+              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
                 We are committed to excellence in every detail, ensuring a seamless and stress-free experience.
               </p>
+              {/* Vertical Divider */}
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[65%] border-r border-dashed border-[#e6d5b8]/80"></div>
             </div>
 
             {/* Creativity */}
-            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 lg:pl-8">
-              <div className="w-14 h-14 rounded-full border border-[#e6d5b8] bg-[#FAF5EB]/50 flex items-center justify-center mb-5 text-[#c5a880]">
-                <Users className="w-6 h-6 stroke-[1.5]" />
+            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 relative lg:px-8">
+              <div className="w-20 h-20 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center mb-6 text-[#c5a880] shadow-sm">
+                <Users className="w-7 h-7 stroke-[1.5]" />
               </div>
-              <h4 className="font-sans font-bold text-[#052e16] text-[16px] mb-3">Our Creativity</h4>
-              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed">
+              <h4 className="font-sans font-bold text-[#052e16] text-[16px] md:text-[17px] mb-3">Our Creativity</h4>
+              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
                 We bring innovative ideas and creative designs to make every event uniquely yours.
               </p>
+              {/* Vertical Divider */}
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[65%] border-r border-dashed border-[#e6d5b8]/80"></div>
             </div>
 
             {/* Promise */}
-            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 lg:pl-8">
-              <div className="w-14 h-14 rounded-full border border-[#e6d5b8] bg-[#FAF5EB]/50 flex items-center justify-center mb-5 text-[#c5a880]">
-                <Star className="w-6 h-6 stroke-[1.5]" />
+            <div className="flex flex-col items-center text-center p-4 pt-8 md:pt-4 lg:px-8">
+              <div className="w-20 h-20 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center mb-6 text-[#c5a880] shadow-sm">
+                <Star className="w-7 h-7 stroke-[1.5]" />
               </div>
-              <h4 className="font-sans font-bold text-[#052e16] text-[16px] mb-3">Our Promise</h4>
-              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed">
+              <h4 className="font-sans font-bold text-[#052e16] text-[16px] md:text-[17px] mb-3">Our Promise</h4>
+              <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
                 We promise to deliver exceptional service and unforgettable experiences every time.
               </p>
             </div>
@@ -207,16 +213,81 @@ export default function AboutPage() {
       </section>
 
       {/* Journey Header */}
-      <section className="relative py-16 z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      <section className="relative pt-4 pb-24 z-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           <div className="flex items-center justify-center gap-3 text-[#c5a880] font-bold uppercase tracking-[0.15em] text-[16px] sm:text-[18px] mb-4">
             <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
             OUR JOURNEY
             <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-[#052e16] font-semibold max-w-2xl leading-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#052e16] font-semibold max-w-4xl leading-tight mb-8 whitespace-normal md:whitespace-nowrap">
             A Journey Of Passion & Excellence
           </h2>
+          
+          {/* Timeline Row */}
+          <div className="relative w-full max-w-6xl mx-auto mt-16 mb-16 px-4">
+            
+            {/* Connecting Line (Desktop) */}
+            <div className="absolute top-[48px] left-[12.5%] right-[12.5%] h-[1px] border-t border-dashed border-[#e6d5b8] -z-10 hidden md:block">
+              {/* Diamonds centered between points */}
+              <div className="absolute left-[16.67%] top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 bg-[#c5a880]"></div>
+              <div className="absolute left-[50%] top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 bg-[#c5a880]"></div>
+              <div className="absolute left-[83.33%] top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 bg-[#c5a880]"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6">
+              
+              {/* 2013 */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full bg-[#021C0D] border border-[#e6d5b8]/30 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Calendar className="w-9 h-9 text-[#c5a880] stroke-[1.5]" />
+                </div>
+                <span className="text-[17px] font-bold text-[#c5a880] font-serif mb-2">2013</span>
+                <h4 className="font-sans font-bold text-[#052e16] text-[15px] md:text-[16px] mb-2">The Beginning</h4>
+                <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
+                  Started with a small team and a big dream to create memorable events.
+                </p>
+              </div>
+
+              {/* 2016 */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full bg-[#021C0D] border border-[#e6d5b8]/30 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Rocket className="w-9 h-9 text-[#c5a880] stroke-[1.5]" />
+                </div>
+                <span className="text-[17px] font-bold text-[#c5a880] font-serif mb-2">2016</span>
+                <h4 className="font-sans font-bold text-[#052e16] text-[15px] md:text-[16px] mb-2">Growing Stronger</h4>
+                <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
+                  Expanded our team and services, creating hundreds of successful events.
+                </p>
+              </div>
+
+              {/* 2019 */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full bg-[#021C0D] border border-[#e6d5b8]/30 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Trophy className="w-9 h-9 text-[#c5a880] stroke-[1.5]" />
+                </div>
+                <span className="text-[17px] font-bold text-[#c5a880] font-serif mb-2">2019</span>
+                <h4 className="font-sans font-bold text-[#052e16] text-[15px] md:text-[16px] mb-2">Recognized Excellence</h4>
+                <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
+                  Earned the trust of more clients with our dedication and unmatched quality.
+                </p>
+              </div>
+
+              {/* Today */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full bg-[#021C0D] border border-[#e6d5b8]/30 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Crown className="w-9 h-9 text-[#c5a880] stroke-[1.5]" />
+                </div>
+                <span className="text-[17px] font-bold text-[#c5a880] font-serif mb-2">Today</span>
+                <h4 className="font-sans font-bold text-[#052e16] text-[15px] md:text-[16px] mb-2">Creating Memories</h4>
+                <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
+                  Continuing our journey of creating extraordinary experiences across cities.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
           <SectionOrnament />
         </div>
       </section>
