@@ -52,7 +52,7 @@ const servicesList = [
     category: 'social',
     title: 'Birthday Parties', 
     desc: 'Creative themes and fun-filled celebrations.', 
-    img: 'https://images.unsplash.com/photo-1530103862676-de3c9de59f9e?auto=format&fit=crop&w=600&q=80' 
+    img: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80' 
   },
   { 
     id: 3, 
