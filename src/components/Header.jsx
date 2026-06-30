@@ -74,7 +74,7 @@ export default function Header() {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
-                  className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] ${
+                  className={`relative font-sans text-xs lg:text-sm font-semibold tracking-wide transition-all duration-200 py-2 mx-3 lg:mx-4 hover:text-[#D4AF37] whitespace-nowrap ${
                     isActive ? 'text-[#D4AF37]' : 'text-white/90'
                   }`}
                 >
