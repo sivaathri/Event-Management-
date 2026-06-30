@@ -12,7 +12,16 @@ const Pinterest = ({ size = 24, ...props }) => <svg width={size} height={size} v
 
 export default function Footer() {
   const quickLinks = ['Home', 'About Us', 'Services', 'Portfolio', 'Testimonials', 'Blogs', 'Contact Us'];
-  const services = ['Wedding Planning', 'Corporate Events', 'Birthday Parties', 'Social Events', 'Destination Weddings', 'Exhibition & Trade Shows', 'Venue Management'];
+  const services = [
+    'Wedding Planning & Decorations',
+    'Birthday Parties',
+    'Stage Decoration',
+    'Photography & Videography',
+    'DJ & Entertainment',
+    'Sound & Lights',
+    'Catering Services',
+    'Bouncers Services'
+  ];
 
   const Divider = () => (
     <div className="flex items-center mb-6 w-full">
