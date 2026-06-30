@@ -139,6 +139,251 @@ const categoryDetails = {
       { img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80', title: 'Floral Decor' },
     ]
   },
+  corporate: {
+    title: 'Corporate Events &\nConferences',
+    description: 'We plan and execute professional corporate events, conferences, and seminars with absolute precision. From branding to audio-visual setups, we ensure your brand message is delivered flawlessly.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <Calendar strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Timeline\nManagement' },
+      { icon: <Star strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Brand\nBranding' },
+      { icon: <Users strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Guest\nHandling' },
+      { icon: <Headphones strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'AV & Sound\nSetups' },
+    ],
+    offerings: [
+      'Conferences & Seminars', 'Product Launches', 'Awards Ceremonies', 'Gala Dinners',
+      'Team Building Events', 'AV & Stage Production', 'Corporate Branding', 'Executive Meetings'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Briefing', desc: 'Understanding objectives.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Proposal', desc: 'Detailed event blueprint.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Production', desc: 'Branding and tech prep.' },
+      { step: 4, icon: <Star strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Execution', desc: 'Flawless day-of run.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Professional & Seamless Execution' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Experienced Corporate Planners' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Meticulous Attention to Branding' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Outstanding Client Support' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80', title: 'Conference Hall' },
+      { img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80', title: 'Stage Setup' },
+      { img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80', title: 'Product Launch' },
+      { img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80', title: 'Awards Ceremony' },
+      { img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80', title: 'Team Building' },
+      { img: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80', title: 'Executive Meeting' },
+    ]
+  },
+  social: {
+    title: 'Social Celebrations &\nMilestone Parties',
+    description: 'Celebrate life\'s special milestones with your loved ones while we take care of the details. From birthdays and anniversaries to theme parties, we create warm, joyful, and memorable experiences.',
+    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <PartyPopper strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Theme\nDesign' },
+      { icon: <Music strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Entertainment\n& DJ' },
+      { icon: <Users strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Interactive\nGames' },
+      { icon: <Heart strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Memorable\nMoments' },
+    ],
+    offerings: [
+      'Birthday Bashes', 'Anniversary Parties', 'Theme Parties', 'Baby Showers',
+      'Family Reunions', 'Custom Invitations', 'Entertainment & DJs', 'Theme Decor'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Consultation', desc: 'Understanding your vision.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Theme Design', desc: 'Selecting color & decor themes.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Setup', desc: 'Balloons, lighting, stages.' },
+      { step: 4, icon: <Heart strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Celebration', desc: 'You celebrate, we manage.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Creative & Unique Themes' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Warm & Dynamic Hosts' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Attention to Minor Details' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Memorable Guest Experiences' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80', title: 'Party Venue' },
+      { img: 'https://images.unsplash.com/photo-1530103862676-de3c9de59f9e?auto=format&fit=crop&w=600&q=80', title: 'Balloon Decor' },
+      { img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80', title: 'Birthday Table' },
+      { img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80', title: 'Celebration Light' },
+      { img: 'https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=600&q=80', title: 'Event Theme' },
+      { img: 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?auto=format&fit=crop&w=600&q=80', title: 'Anniversary' },
+    ]
+  },
+  entertainment: {
+    title: 'Sound, Lights &\nEntertainment Production',
+    description: 'Bring your events to life with our premium entertainment services. We provide professional DJs, live bands, state-of-the-art sound systems, and mesmerizing lighting production.',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <Music strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Live Bands\n& DJs' },
+      { icon: <Speaker strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Pro Sound\nSystems' },
+      { icon: <Star strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Intelligent\nLighting' },
+      { icon: <LayoutGrid strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Stage FX\n& Visuals' },
+    ],
+    offerings: [
+      'Professional DJs', 'Live Bands & Musicians', 'Sound System Rentals', 'Stage Lighting Design',
+      'LED Screen Setups', 'Dance Floors', 'Special Effects (SFX)', 'Karaoke Setups'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Consultation', desc: 'Understanding sound requirements.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Tech Spec', desc: 'Laying out audio/visual design.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Setup & Test', desc: 'Soundcheck and light syncing.' },
+      { step: 4, icon: <Music strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Show Time', desc: 'Stellar live performance management.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Top-tier Audio Brands' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Certified Tech Engineers' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Mesmerizing DMX Light Shows' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Energetic Live Performers' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80', title: 'Concert Sound' },
+      { img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80', title: 'DJ Stage' },
+      { img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80', title: 'Dance Floor' },
+      { img: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80', title: 'Live Performance' },
+      { img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80', title: 'Light Setup' },
+      { img: 'https://images.unsplash.com/photo-1482440308425-276ad0f28b19?auto=format&fit=crop&w=600&q=80', title: 'Audio System' },
+    ]
+  },
+  catering: {
+    title: 'Exquisite Catering &\nFine Dining Services',
+    description: 'Treat your guests to a premium culinary experience. We design custom menus featuring traditional, fusion, and international cuisines, all prepared by professional chefs and served by courteous staff.',
+    image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <ConciergeBell strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Custom\nMenus' },
+      { icon: <Star strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Gourmet\nCuisines' },
+      { icon: <Users strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Professional\nServers' },
+      { icon: <CheckCircle strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Hygiene\nStandards' },
+    ],
+    offerings: [
+      'Buffet Catering', 'Fine Dining Services', 'Live Food Counters', 'Custom Menu Design',
+      'Dessert Bars', 'Mocktail & Beverage Stations', 'High Tea Catering', 'Corporate Lunches'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Consultation', desc: 'Choosing menus.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Tasting', desc: 'Sample food preview.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Prep', desc: 'Fresh ingredient prep.' },
+      { step: 4, icon: <Star strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Serving', desc: 'Top-tier culinary service.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Award-winning Chefs' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Superb Serving Etiquette' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Clean & Hygienic Preparation' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Aromatic & Tasty Dishes' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80', title: 'Buffet Table' },
+      { img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80', title: 'Gourmet Dish' },
+      { img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80', title: 'Live Counter' },
+      { img: 'https://images.unsplash.com/photo-149514740007a-18a1833f4a77?auto=format&fit=crop&w=600&q=80', title: 'Desserts' },
+      { img: 'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=600&q=80', title: 'Fine Dining' },
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Welcome Drinks' },
+    ]
+  },
+  venue: {
+    title: 'Venue Booking &\nStunning Decor Solutions',
+    description: 'We help you find the perfect venue and transform it with breathtaking decorations. From floral backdrops and ceiling drapes to theme-based custom fabrications, we create the perfect ambiance.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <Presentation strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Venue\nSourcing' },
+      { icon: <Flower strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Floral\nDesigns' },
+      { icon: <Star strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Theme\nFabrication' },
+      { icon: <LayoutGrid strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Space\nPlanning' },
+    ],
+    offerings: [
+      'Luxury Venues Sourcing', 'Theme Decorations', 'Floral Design & Mandaps', 'Ceiling & Draping setups',
+      'Seating Layouts', 'Table Settings & Props', 'Entry Pathway Decor', 'Outdoor Tent setups'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Recce', desc: 'Venue site visits.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Rendering', desc: '3D design preview.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Setup', desc: 'Fabrication & floral work.' },
+      { step: 4, icon: <Star strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Reveal', desc: 'Ready for the event.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Breathtaking Designs' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Skilled Decor Craftsmen' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Aesthetic Color Palettes' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Partnerships with Top Venues' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Floral Backdrop' },
+      { img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80', title: 'Ceiling Decor' },
+      { img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80', title: 'Hall Setup' },
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Entrance Pathway' },
+      { img: 'https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&w=600&q=80', title: 'Outdoor Drapes' },
+      { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80', title: 'Mandap' },
+    ]
+  },
+  photography: {
+    title: 'Photography &\nCinematography Captures',
+    description: 'Preserve your precious moments forever. Our team of professional photographers and cinematographers specialize in capturing emotions, candid laughter, and stunning highlights of your event.',
+    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <Camera strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Candid\nPhotography' },
+      { icon: <Star strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Cinematic\nVideos' },
+      { icon: <Users strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Pre-Event\nShoots' },
+      { icon: <CheckCircle strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'High-Res\nDelivery' },
+    ],
+    offerings: [
+      'Candid Photography', 'Traditional Photography', 'Cinematic Highlight Videos', 'Full Event Recordings',
+      'Pre-Wedding Shoots', 'Drone Aerial Footage', 'Digital & Printed Albums', 'Instant Photo Booths'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Planning', desc: 'Detailing shot-list.' },
+      { step: 2, icon: <Camera strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Shooting', desc: 'Dynamic day coverage.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Editing', desc: 'Color correction & grading.' },
+      { step: 4, icon: <CheckCircle strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Delivery', desc: 'High-res photos/videos.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Experienced Cameramen' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Premium Camera Gear' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Candid & Natural Photos' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Timely Album Deliveries' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80', title: 'Candid Moment' },
+      { img: 'https://images.unsplash.com/photo-1520854221256-17451cc35953?auto=format&fit=crop&w=600&q=80', title: 'Portrait' },
+      { img: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&q=80', title: 'Group Capture' },
+      { img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80', title: 'Stage Shoot' },
+      { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Couple Shoot' },
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Videography' },
+    ]
+  },
+  support: {
+    title: 'Event Support &\nSecurity Services',
+    description: 'Ensure a smooth, safe, and secure event. We provide professional event support staff, hostess services, guest management, and security solutions including bouncers and crowd control.',
+    image: 'https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&w=1200&q=80',
+    features: [
+      { icon: <Shield strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Bouncers\n& Security' },
+      { icon: <Headset strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Hostess\n& Welcoming' },
+      { icon: <Users strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Crowd\nControl' },
+      { icon: <CheckCircle strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'Smooth\nCoordination' },
+    ],
+    offerings: [
+      'Bouncer & Guard Security', 'Professional Hostesses', 'Guest RSVP Management', 'Valet Parking Coordination',
+      'Crowd Management Setups', 'Logistics Support', 'Permit & License Help', 'Housekeeping Teams'
+    ],
+    process: [
+      { step: 1, icon: <MessageSquare strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Briefing', desc: 'Understanding security list.' },
+      { step: 2, icon: <ClipboardList strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Layout', desc: 'Placing staff at entries.' },
+      { step: 3, icon: <Settings strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Operation', desc: 'Guest welcoming & control.' },
+      { step: 4, icon: <CheckCircle strokeWidth={1.5} className="w-5 h-5 text-[#c5a880]" />, title: 'Wrapping', desc: 'Safely dismissing guests.' },
+    ],
+    whyChooseUs: [
+      { icon: <Star strokeWidth={1.5} className="w-5 h-5" />, text: 'Highly trained Hostesses' },
+      { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Disciplined Security Guards' },
+      { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Zero Incident History' },
+      { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Humble & Polite Reception' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&w=600&q=80', title: 'RSVP Desk' },
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Welcoming Host' },
+      { img: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80', title: 'Bouncers' },
+      { img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80', title: 'Guest Management' },
+      { img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80', title: 'Housekeeping Team' },
+      { img: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80', title: 'Security Check' },
+    ]
+  },
   default: {
     title: 'Premium Event\nServices',
     description: 'We bring exceptional expertise and flawless execution to your events. From comprehensive planning to the final moments, we guarantee a spectacular and stress-free experience tailored exactly to your needs.',
@@ -181,6 +426,47 @@ const categoryDetails = {
 const ServiceDetailView = ({ categoryId }) => {
   const data = categoryDetails[categoryId] || categoryDetails.default;
   const [activeImage, setActiveImage] = useState(null);
+
+  const bannerContent = {
+    weddings: {
+      title: "Ready to Plan Your Dream Wedding?",
+      subtitle: "Let's create a romantic celebration you and your guests will cherish forever."
+    },
+    corporate: {
+      title: "Ready to Plan Your Next Corporate Event?",
+      subtitle: "Let's create an impactful, professional experience that elevates your brand."
+    },
+    social: {
+      title: "Ready to Plan Your Special Celebration?",
+      subtitle: "Let's design a joyful milestone party filled with laughter and fun memories."
+    },
+    entertainment: {
+      title: "Ready to Pump Up the Entertainment?",
+      subtitle: "Let's electrify your venue with state-of-the-art sound, lighting, and live beats."
+    },
+    catering: {
+      title: "Ready to Treat Your Guests to Gourmet Dining?",
+      subtitle: "Let's curate a spectacular custom menu crafted by award-winning chefs."
+    },
+    venue: {
+      title: "Ready to Design Your Perfect Ambiance?",
+      subtitle: "Let's find the ideal venue and craft breathtaking theme-based decor."
+    },
+    photography: {
+      title: "Ready to Capture Your Beautiful Moments?",
+      subtitle: "Let's frame every emotion, candid smile, and cinematic highlight perfectly."
+    },
+    support: {
+      title: "Need Professional Event Support & Security?",
+      subtitle: "Let's ensure a seamless, secure, and stress-free event with our expert team."
+    },
+    default: {
+      title: "Ready to Plan Your Dream Event?",
+      subtitle: "Let's create a celebration you and your guests will cherish forever."
+    }
+  };
+
+  const activeBanner = bannerContent[categoryId] || bannerContent.default;
 
   useEffect(() => {
     if (activeImage) {
@@ -264,7 +550,16 @@ const ServiceDetailView = ({ categoryId }) => {
               <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
             </div>
             <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">
-              OUR {categoryId === 'weddings' ? 'WEDDING' : 'PREMIUM'} WORK
+              OUR {
+                categoryId === 'weddings' ? 'WEDDING' :
+                categoryId === 'corporate' ? 'CORPORATE' :
+                categoryId === 'social' ? 'SOCIAL CELEBRATION' :
+                categoryId === 'entertainment' ? 'ENTERTAINMENT' :
+                categoryId === 'catering' ? 'CATERING' :
+                categoryId === 'venue' ? 'VENUE & DECOR' :
+                categoryId === 'photography' ? 'PHOTOGRAPHY' :
+                categoryId === 'support' ? 'EVENT SUPPORT' : 'PREMIUM'
+              } WORK
             </h4>
             <div className="flex items-center gap-1.5">
               <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
@@ -299,10 +594,10 @@ const ServiceDetailView = ({ categoryId }) => {
             </div>
             <div>
                <h4 className="text-xl md:text-2xl font-serif text-[#D4AF37] font-semibold mb-2">
-                 Ready to Plan Your Dream {categoryId === 'weddings' ? 'Wedding' : categoryId === 'corporate' ? 'Corporate Event' : 'Event'}?
+                 {activeBanner.title}
                </h4>
                <p className="text-[#a3b3a9] font-sans text-sm md:text-[15px] leading-relaxed max-w-xl">
-                 Let's create a celebration you and your guests will cherish forever.
+                 {activeBanner.subtitle}
                </p>
             </div>
          </div>
@@ -350,6 +645,10 @@ const ServiceDetailView = ({ categoryId }) => {
 
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState('all');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeCategory]);
 
   return (
     <section 
