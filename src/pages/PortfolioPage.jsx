@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import portfliobg from '../assets/portfliobg.png';
-import portfliol from '../assets/portfliol.png';
 
 const categories = [
   { id: 'all', label: 'All Events', icon: LayoutGrid },
@@ -99,13 +98,6 @@ export default function PortfolioPage() {
       {/* Portfolio Header with Soft Fading Image */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         
-        {/* Left side leaf decoration */}
-        <img 
-          src={portfliol} 
-          alt="" 
-          className="absolute left-0 top-0 h-full w-auto object-contain object-left pointer-events-none -z-10 select-none"
-        />
-
         {/* Right side fading backdrop image */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] lg:w-[60%] -z-10 hidden md:block select-none pointer-events-none">
           {/* Vignette Gradients */}
@@ -154,7 +146,7 @@ export default function PortfolioPage() {
           
           {/* Category Tabs Pill Container */}
           <div className="flex justify-center mb-16">
-            <div className="bg-white border border-[#FAF5EB] rounded-2xl md:rounded-full p-2 shadow-[0_8px_30px_rgba(0,0,0,0.015)] flex flex-wrap justify-center items-center gap-1.5 max-w-full">
+            <div className="bg-white border border-[#FAF5EB] rounded-[24px] p-2.5 shadow-[0_4px_25px_rgba(0,0,0,0.015)] flex flex-wrap justify-center items-center gap-3 md:gap-5 max-w-full">
               {categories.map((cat) => {
                 const Icon = cat.icon;
                 const isActive = activeTab === cat.id;
@@ -162,13 +154,13 @@ export default function PortfolioPage() {
                   <button
                     key={cat.id}
                     onClick={() => setActiveTab(cat.id)}
-                    className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-bold tracking-[0.08em] transition-all duration-300 uppercase whitespace-nowrap ${
+                    className={`flex items-center gap-3 px-5 py-3.5 rounded-[14px] text-[13.5px] font-sans font-medium transition-all duration-300 whitespace-nowrap ${
                       isActive 
-                        ? 'bg-[#021C0D] text-white shadow-md' 
-                        : 'text-[#052e16] hover:bg-[#FAF5EB]/60 hover:text-[#b78d51]'
+                        ? 'bg-[#021C0D] text-white shadow-sm' 
+                        : 'text-[#052e16] hover:bg-[#FAF5EB]/50 hover:text-[#b78d51]'
                     }`}
                   >
-                    <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#c5a880]' : 'text-[#c5a880]'}`} />
+                    <Icon className="w-4 h-4 text-[#c5a880] flex-shrink-0" strokeWidth={1.5} />
                     {cat.label}
                   </button>
                 );
