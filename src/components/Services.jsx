@@ -103,7 +103,7 @@ export default function Services() {
 
   return (
     <section className="bg-white min-h-screen">
-      <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1600px] mx-auto">
         
         {/* Sidebar */}
         <div className="w-full lg:w-[340px] bg-white border-r border-slate-100 flex flex-col flex-shrink-0 relative lg:sticky lg:top-20 self-start px-6 py-10 lg:pl-10 lg:pr-6">
@@ -160,15 +160,15 @@ export default function Services() {
            {/* Grid */}
            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
               {servicesList.filter(s => activeCategory === 'all' || s.category === activeCategory).map((svc, idx) => (
-                 <div key={svc.id} className="flex flex-col group cursor-pointer animate-slide-up bg-white p-3.5 rounded-[24px] border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style={{ animationDelay: `${idx * 50}ms` }}>
-                    <div className="aspect-[4/3] rounded-[16px] overflow-hidden mb-5">
+                 <div key={svc.id} className="flex flex-col group cursor-pointer animate-slide-up bg-white rounded-[20px] overflow-hidden border border-[#f0eae1] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 transform hover:-translate-y-1" style={{ animationDelay: `${idx * 50}ms` }}>
+                    <div className="aspect-[4/3] w-full overflow-hidden mb-5">
                        <img src={svc.img} alt={svc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
                     </div>
-                    <div className="px-1 pb-2 flex flex-col flex-grow">
-                      <h3 className="font-sans font-bold text-[#052e16] text-[16px] mb-2.5 whitespace-pre-line leading-snug group-hover:text-[#b78d51] transition-colors">
+                    <div className="px-6 pb-7 flex flex-col flex-grow">
+                      <h3 className="font-sans font-bold text-[#052e16] text-[16.5px] mb-2 whitespace-pre-line leading-snug group-hover:text-[#b78d51] transition-colors">
                         {svc.title}
                       </h3>
-                      <p className="text-slate-500 font-sans text-[13px] leading-[1.6] mt-auto">
+                      <p className="text-slate-500 font-sans text-[13.5px] leading-[1.6] mt-auto">
                         {svc.desc}
                       </p>
                     </div>
