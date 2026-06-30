@@ -98,14 +98,14 @@ export default function PortfolioPage() {
       {/* Portfolio Header with Soft Fading Image */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         
-        {/* Right side fading backdrop image */}
-        <div className="absolute right-0 top-0 bottom-0 w-[55%] lg:w-[60%] -z-10 hidden md:block select-none pointer-events-none">
-          {/* Vignette Gradients */}
-         
+        {/* Full-width backdrop image */}
+        <div className="absolute inset-0 -z-10 select-none pointer-events-none">
+          {/* Vignette Gradients to keep text readable */}
+        
           <img 
             src={portfliobg} 
             alt="Faded Arch Background" 
-            className="w-full h-full object-cover opacity-90 object-left transform "
+            className="w-full h-full object-cover opacity-95 object-right"
           />
         </div>
 
@@ -177,10 +177,10 @@ export default function PortfolioPage() {
                   key={idx}
                   animation="animate-slide-up"
                   delay={idx === 0 ? 'animate-delay-100' : idx === 1 ? 'animate-delay-200' : idx === 2 ? 'animate-delay-300' : 'animate-delay-300'}
-                  className="bg-white border border-[#FAF5EB] rounded-[24px] overflow-hidden p-3 shadow-[0_8px_30px_rgba(0,0,0,0.012)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.025)] transition-all duration-300 group"
+                  className="bg-white border border-[#FAF5EB] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.012)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.025)] transition-all duration-300 group"
                 >
                   {/* Image Wrapper */}
-                  <div className="rounded-[20px] overflow-hidden aspect-[4/3] relative">
+                  <div className="overflow-hidden aspect-[4/3] relative">
                     <img 
                       src={item.img} 
                       alt={item.title} 
@@ -188,19 +188,19 @@ export default function PortfolioPage() {
                       loading="lazy"
                     />
                     
-                    {/* Hover Zoom Search Button */}
-                    <div className="w-10 h-10 rounded-full bg-[#021C0D]/85 border border-[#e6d5b8]/35 text-[#c5a880] flex items-center justify-center absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105 pointer-events-none shadow-md">
+                    {/* Always Visible Search Button */}
+                    <div className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-[2px] text-white flex items-center justify-center absolute top-4 right-4 transition-all duration-300 hover:bg-[#021C0D] hover:text-[#c5a880] shadow-md">
                       <Search className="w-4 h-4 stroke-[2]" />
                     </div>
                   </div>
 
                   {/* Details */}
-                  <div className="p-4 pt-5 pb-2">
-                    <h3 className="font-sans font-bold text-[#052e16] text-[15px] mb-2 group-hover:text-[#b78d51] transition-colors leading-tight">
+                  <div className="p-5 pt-4 pb-5">
+                    <h3 className="font-serif font-semibold text-[#052e16] text-[17px] mb-2.5 group-hover:text-[#b78d51] transition-colors leading-tight">
                       {item.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-slate-400 text-xs font-semibold tracking-wide">
-                      <CategoryIcon className="w-3.5 h-3.5 text-[#c5a880] flex-shrink-0" />
+                    <div className="flex items-center gap-2 text-slate-500 text-[13px] font-sans">
+                      <CategoryIcon className="w-3.5 h-3.5 text-[#c5a880] flex-shrink-0" strokeWidth={1.5} />
                       <span>{item.categoryLabel}</span>
                     </div>
                   </div>
