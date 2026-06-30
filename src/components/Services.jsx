@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, Briefcase, Music, Image as ImageIcon, CheckCircle, Users, Headset, LayoutGrid, Calendar, Flower, Star, User, Eye, ClipboardList, Settings, MessageSquare } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, Briefcase, Music, Image as ImageIcon, CheckCircle, Users, Headset, LayoutGrid, Calendar, Flower, Star, User, Eye, ClipboardList, Settings, MessageSquare, X } from 'lucide-react';
 import ser1 from '../assets/ser1.png';
 import ser2 from '../assets/ser2.png';
 
@@ -103,7 +104,7 @@ const servicesList = [
 const categoryDetails = {
   weddings: {
     title: 'Wedding Planning &\nDecorations',
-    description: 'We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.',
+    description: 'We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.',
     image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80',
     features: [
       { icon: <Calendar strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'End-to-End\nPlanning' },
@@ -179,6 +180,18 @@ const categoryDetails = {
 
 const ServiceDetailView = ({ categoryId }) => {
   const data = categoryDetails[categoryId] || categoryDetails.default;
+  const [activeImage, setActiveImage] = useState(null);
+
+  useEffect(() => {
+    if (activeImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeImage]);
   
   return (
     <div className="w-full animate-fade-in flex flex-col pt-8 xl:pt-4">
@@ -206,45 +219,15 @@ const ServiceDetailView = ({ categoryId }) => {
             {data.description}
           </p>
 
-          {/* Gallery Section */}
-          {data.gallery && (
-            <div className="mb-14 animate-fade-in w-full xl:w-[180%] relative z-10" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-              <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-8">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
-                  <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
-                </div>
-                <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">
-                  OUR {categoryId === 'weddings' ? 'WEDDING' : 'PREMIUM'} WORK
-                </h4>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
-                  <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 lg:gap-6">
-                {data.gallery.map((item, i) => (
-                  <div key={i} className="flex flex-col items-center group cursor-pointer">
-                    <div className="w-full aspect-[4/3] rounded-[16px] overflow-hidden mb-3 shadow-md border border-slate-100 relative">
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-                    </div>
-                    <h5 className="text-[10px] md:text-[11px] xl:text-[12px] font-bold text-[#052e16] tracking-wider text-center leading-[1.3] uppercase mt-1">{item.title}</h5>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Features Grid */}
-          <div className="flex items-start divide-x divide-[#f0eae1] mb-12 max-w-lg">
+          <div className="flex items-start divide-x divide-[#f0eae1] mb-12 w-full max-w-md">
             {data.features.map((feat, i) => (
               <div key={i} className="flex flex-col items-center text-center flex-1 px-1">
                 <div className="flex items-center justify-center mb-3 text-[#b78d51]">
                   {React.cloneElement(feat.icon, { className: "w-7 h-7" })}
                 </div>
-                <h5 className="text-[12px] font-medium text-[#052e16] whitespace-pre-line leading-relaxed">
+                <h5 className="text-[11px] font-medium text-[#052e16] whitespace-pre-line leading-relaxed">
                   {feat.title}
                 </h5>
               </div>
@@ -255,7 +238,7 @@ const ServiceDetailView = ({ categoryId }) => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="/contact" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-lg hover:shadow-xl">
                GET A CUSTOM QUOTE
-               <ArrowRight className="w-4 h-4 ml-3" />
+               <ArrowRight className="w-4 h-4 ml-3 text-[#b78d51]" />
             </a>
             <a href="/portfolio" className="bg-white border border-[#e6d5b8] text-[#052e16] hover:bg-[#FAF5EB] px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-sm">
                VIEW PORTFOLIO
@@ -266,11 +249,100 @@ const ServiceDetailView = ({ categoryId }) => {
 
         {/* Right Image */}
         <div className="flex-1 xl:max-w-[55%]">
-          <div className="aspect-[4/3] xl:aspect-[1/1] w-full rounded-[24px] overflow-hidden shadow-2xl">
+          <div className="aspect-[4/3] xl:aspect-[18/21] w-full rounded-[24px] overflow-hidden shadow-2xl">
             <img src={data.image} alt="Service" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
+
+      {/* Gallery Section */}
+      {data.gallery && (
+        <div className=" mb-8 animate-fade-in w-full relative z-10" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+          <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-8">
+            <div className="flex items-center gap-1.5">
+              <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
+              <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
+            </div>
+            <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">
+              OUR {categoryId === 'weddings' ? 'WEDDING' : 'PREMIUM'} WORK
+            </h4>
+            <div className="flex items-center gap-1.5">
+              <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
+              <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 lg:gap-6">
+            {data.gallery.map((item, i) => (
+              <div key={i} onClick={() => setActiveImage(item)} className="flex flex-col items-center group cursor-pointer">
+                <div className="w-full aspect-[7/6] rounded-[16px] overflow-hidden mb-3 shadow-md border border-slate-100 relative">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                </div>
+                <h5 className="text-[10px] md:text-[11px] xl:text-[12px] font-bold text-[#052e16] tracking-wider text-center leading-[1.3] uppercase mt-1">{item.title}</h5>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Custom Quote Banner */}
+      <div className="mt-16 bg-[#021C0D] rounded-2xl p-8 lg:px-12 lg:py-10 flex flex-col xl:flex-row items-center justify-between border border-[#D4AF37]/20 shadow-xl animate-fade-in text-white w-full">
+         <div className="flex flex-col md:flex-row items-center mb-8 xl:mb-0 md:space-x-8 text-center md:text-left">
+            <div className="w-16 h-16 rounded-full border border-[#D4AF37] flex items-center justify-center flex-shrink-0 text-[#D4AF37] bg-transparent mb-6 md:mb-0">
+               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="2" y="3" width="20" height="13" rx="2" />
+                  <path d="M12 16v5M8 21h8" />
+                  <circle cx="12" cy="9" r="2.5" />
+                  <path d="M8.5 14a3.5 3.5 0 0 1 7 0" />
+               </svg>
+            </div>
+            <div>
+               <h4 className="text-xl md:text-2xl font-serif text-[#D4AF37] font-semibold mb-2">
+                 Ready to Plan Your Dream {categoryId === 'weddings' ? 'Wedding' : categoryId === 'corporate' ? 'Corporate Event' : 'Event'}?
+               </h4>
+               <p className="text-[#a3b3a9] font-sans text-sm md:text-[15px] leading-relaxed max-w-xl">
+                 Let's create a celebration you and your guests will cherish forever.
+               </p>
+            </div>
+         </div>
+         <a href="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
+            GET A CUSTOM QUOTE
+            <ArrowRight className="w-4 h-4 ml-3 text-[#021C0D]" />
+         </a>
+      </div>
+
+      {/* Lightbox Modal */}
+      {activeImage && createPortal(
+        <div 
+          className="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[9999] p-4 animate-fade-in"
+          onClick={() => setActiveImage(null)}
+        >
+          {/* Close Button */}
+          <button 
+            className="absolute top-6 right-6 text-white/80 hover:text-white hover:scale-110 transition-all duration-300 p-2 bg-black/40 rounded-full"
+            onClick={() => setActiveImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          
+          {/* Image and Title Container */}
+          <div 
+            className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={activeImage.img} 
+              alt={activeImage.title} 
+              className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-white/10" 
+            />
+            <h4 className="text-white font-sans font-bold tracking-widest text-center mt-6 text-sm uppercase md:text-base">
+              {activeImage.title}
+            </h4>
+          </div>
+        </div>,
+        document.body
+      )}
 
     </div>
   );
@@ -383,21 +455,24 @@ export default function Services() {
               </div>
 
               {/* Custom Quote Banner */}
-              <div className="mt-16 bg-[#FAF5EB] rounded-2xl p-8 lg:px-12 lg:py-10 flex flex-col xl:flex-row items-center justify-between border border-[#f0eae1]/50 shadow-sm animate-fade-in">
+              <div className="mt-16 bg-[#021C0D] rounded-2xl p-8 lg:px-12 lg:py-10 flex flex-col xl:flex-row items-center justify-between border border-[#D4AF37]/20 shadow-xl animate-fade-in text-white w-full">
                  <div className="flex flex-col md:flex-row items-center mb-8 xl:mb-0 md:space-x-8 text-center md:text-left">
-                    <div className="w-20 h-20 rounded-full border border-[#e6d5b8] flex items-center justify-center flex-shrink-0 text-[#c5a880] bg-white mb-6 md:mb-0 shadow-sm">
-                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                    <div className="w-16 h-16 rounded-full border border-[#D4AF37] flex items-center justify-center flex-shrink-0 text-[#D4AF37] bg-transparent mb-6 md:mb-0">
+                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <rect x="2" y="3" width="20" height="13" rx="2" />
+                          <path d="M12 16v5M8 21h8" />
+                          <circle cx="12" cy="9" r="2.5" />
+                          <path d="M8.5 14a3.5 3.5 0 0 1 7 0" />
                        </svg>
                     </div>
                     <div>
-                       <h4 className="text-[22px] font-serif text-[#052e16] font-semibold mb-3">Looking for something unique?</h4>
-                       <p className="text-slate-500 font-sans text-[15px] leading-relaxed max-w-lg">Tell us your ideas and we'll create a customized experience just for you.</p>
+                       <h4 className="text-xl md:text-2xl font-serif text-[#D4AF37] font-semibold mb-2">Ready to Plan Your Dream Event?</h4>
+                       <p className="text-[#a3b3a9] font-sans text-sm md:text-[15px] leading-relaxed max-w-xl">Let's create a celebration you and your guests will cherish forever.</p>
                     </div>
                  </div>
-                 <a href="/contact" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
+                 <a href="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
                     GET A CUSTOM QUOTE
-                    <ArrowRight className="w-4 h-4 ml-3" />
+                    <ArrowRight className="w-4 h-4 ml-3 text-[#021C0D]" />
                  </a>
               </div>
             </div>
