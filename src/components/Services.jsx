@@ -135,6 +135,7 @@ const categoryDetails = {
       { img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80', title: 'Wedding Entrance' },
       { img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80', title: 'Table Setup' },
       { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Outdoor Wedding' },
+      { img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80', title: 'Floral Decor' },
     ]
   },
   default: {
@@ -171,6 +172,7 @@ const categoryDetails = {
       { img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80', title: 'Lighting' },
       { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Floral Decor' },
       { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80', title: 'Catering' },
+      { img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80', title: 'Entertainment' },
     ]
   }
 };
@@ -206,7 +208,7 @@ const ServiceDetailView = ({ categoryId }) => {
 
           {/* Gallery Section */}
           {data.gallery && (
-            <div className="mb-12 animate-fade-in w-full xl:w-[110%]" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+            <div className="mb-14 animate-fade-in w-full xl:w-[180%] relative z-10" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
               <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-8">
                 <div className="flex items-center gap-1.5">
                   <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
@@ -221,14 +223,14 @@ const ServiceDetailView = ({ categoryId }) => {
                 </div>
               </div>
               
-              <div className="grid grid-cols-5 gap-3 lg:gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 lg:gap-6">
                 {data.gallery.map((item, i) => (
                   <div key={i} className="flex flex-col items-center group cursor-pointer">
-                    <div className="w-full aspect-[4/3] rounded-[10px] overflow-hidden mb-2 shadow-sm border border-slate-100 relative">
+                    <div className="w-full aspect-[4/3] rounded-[16px] overflow-hidden mb-3 shadow-md border border-slate-100 relative">
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                     </div>
-                    <h5 className="text-[10px] md:text-[11.5px] font-bold text-[#052e16] tracking-wide text-center leading-tight mt-1">{item.title}</h5>
+                    <h5 className="text-[10px] md:text-[11px] xl:text-[12px] font-bold text-[#052e16] tracking-wider text-center leading-[1.3] uppercase mt-1">{item.title}</h5>
                   </div>
                 ))}
               </div>
