@@ -1,132 +1,208 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
-import ScrollReveal from './ScrollReveal';
-import leaves1 from '../assets/leaves1.png';
-import leaves2 from '../assets/leaves2.png';
+import React, { useState } from 'react';
+import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, Briefcase, Music, Image as ImageIcon, CheckCircle, Users, Headset, LayoutGrid } from 'lucide-react';
 
-const services = [
-  { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS' },
-  { icon: PartyPopper, title: 'BIRTHDAY\nPARTIES' },
-  { icon: Presentation, title: 'STAGE\nDECORATION' },
-  { icon: Camera, title: 'PHOTOGRAPHY &\nVIDEOGRAPHY' },
-  { icon: Headphones, title: 'DJ &\nENTERTAINMENT' },
-  { icon: Speaker, title: 'SOUND &\nLIGHTS' },
-  { icon: ConciergeBell, title: 'CATERING\nSERVICES' },
-  { icon: Shield, title: 'BOUNCERS\nSERVICES' },
-];
-
-const SectionOrnament = () => (
-  <div className="flex items-center justify-center w-full">
-    <div className="flex items-center">
-      <div className="w-16 sm:w-24 h-[1.5px] bg-[#c5a880]"></div>
-      <div className="w-2 h-2 rotate-45 bg-[#c5a880] ml-2 mr-3 opacity-90"></div>
-    </div>
-    
-    <div className="text-[#c5a880] flex items-center justify-center drop-shadow-sm">
-      <svg width="32" height="24" viewBox="0 0 32 24" fill="currentColor">
-        {/* Top central leaf */}
-        <path d="M16 0 C16 0 19 6 20 8 C18 10 16 12 16 12 C16 12 14 10 12 8 C13 6 16 0 16 0 Z" />
-        {/* Left leaf */}
-        <path d="M13.5 10 C9 8 3 8 3 8 C3 8 6 14 12 14 C12 14 14 12 13.5 10 Z" />
-        {/* Right leaf */}
-        <path d="M18.5 10 C23 8 29 8 29 8 C29 8 26 14 20 14 C20 14 18 12 18.5 10 Z" />
-        {/* Base petal */}
-        <path d="M16 12 L19 18 C17.5 19 14.5 19 13 18 Z" />
-      </svg>
-    </div>
-
-    <div className="flex items-center">
-      <div className="w-2 h-2 rotate-45 bg-[#c5a880] ml-3 mr-2 opacity-90"></div>
-      <div className="w-16 sm:w-24 h-[1.5px] bg-[#c5a880]"></div>
-    </div>
-  </div>
+const WeddingRings = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#c5a880]">
+    <circle cx="9" cy="14" r="5" />
+    <circle cx="15" cy="14" r="5" />
+    <polygon points="9 9 10 6 9 5 8 6" fill="currentColor" stroke="none" />
+    <polygon points="15 9 16 6 15 5 14 6" fill="currentColor" stroke="none" />
+  </svg>
 );
 
+const AllServicesIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#c5a880]">
+    <rect x="5" y="4" width="14" height="17" rx="2" />
+    <path d="M9 9h6M9 13h6M9 17h4" />
+    <path d="M12 4v17" strokeDasharray="2 2" />
+  </svg>
+);
+
+const SocialIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#c5a880]">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+const categories = [
+  { id: 'all', title: 'ALL SERVICES', subtitle: 'Complete Event Solutions', icon: <AllServicesIcon /> },
+  { id: 'weddings', title: 'WEDDINGS', subtitle: 'Make your dream wedding', icon: <WeddingRings /> },
+  { id: 'corporate', title: 'CORPORATE EVENTS', subtitle: 'Professional & Impactful', icon: <Briefcase className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+  { id: 'social', title: 'SOCIAL CELEBRATIONS', subtitle: "Life's Special Moments", icon: <SocialIcon /> },
+  { id: 'entertainment', title: 'ENTERTAINMENT', subtitle: 'Music, DJ & More', icon: <Headphones className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+  { id: 'catering', title: 'CATERING', subtitle: 'Delicious Food Experience', icon: <ConciergeBell className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+  { id: 'venue', title: 'VENUE & DECOR', subtitle: 'Stunning Venues & Decor', icon: <Presentation className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+  { id: 'photography', title: 'PHOTOGRAPHY', subtitle: 'Capture Every Moment', icon: <Camera className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+  { id: 'support', title: 'EVENT SUPPORT', subtitle: 'End-to-End Support', icon: <Headset className="w-7 h-7 stroke-[1.5] text-[#c5a880]" /> },
+];
+
+const servicesList = [
+  { 
+    id: 1, 
+    category: 'weddings',
+    title: 'Wedding Planning &\nDecorations', 
+    desc: 'From intimate ceremonies to grand celebrations.', 
+    img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 2, 
+    category: 'social',
+    title: 'Birthday Parties', 
+    desc: 'Creative themes and fun-filled celebrations.', 
+    img: 'https://images.unsplash.com/photo-1530103862676-de3c9de59f9e?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 3, 
+    category: 'venue',
+    title: 'Stage Decoration', 
+    desc: 'Stunning stage setups that leave a lasting impression.', 
+    img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 4, 
+    category: 'photography',
+    title: 'Photography &\nVideography', 
+    desc: 'Candid moments, beautifully captured.', 
+    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 5, 
+    category: 'entertainment',
+    title: 'DJ & Entertainment', 
+    desc: 'High-energy DJ, artists & live performances.', 
+    img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 6, 
+    category: 'entertainment',
+    title: 'Sound & Lights', 
+    desc: 'Crystal-clear sound and mesmerizing lights.', 
+    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 7, 
+    category: 'catering',
+    title: 'Catering Services', 
+    desc: 'Exquisite menus tailored to your taste.', 
+    img: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80' 
+  },
+  { 
+    id: 8, 
+    category: 'support',
+    title: 'Bouncers Services', 
+    desc: 'Professional security for a safe and smooth event.', 
+    img: 'https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&w=600&q=80' 
+  },
+];
+
 export default function Services() {
+  const [activeCategory, setActiveCategory] = useState('all');
+
   return (
-    <section id="services" className="relative py-16 bg-[#FAFAFA] overflow-hidden">
-      
-      {/* Left Decorative Leaves */}
-      <img 
-        src={leaves1} 
-        alt="" 
-        className="absolute left-0 top-[5%] md:top-[10%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-100 z-10 pointer-events-none transform -translate-x-[10%]"
-      />
-
-      {/* Right Decorative Leaves */}
-      <img 
-        src={leaves2} 
-        alt="" 
-        className="absolute right-0 bottom-[30%] md:bottom-[45%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-100 z-10 pointer-events-none transform -translate-x-4 md:-translate-x-0"
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    <section className="bg-white min-h-screen">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto">
         
-        {/* Section Header */}
-        <ScrollReveal animation="animate-slide-up" className="flex flex-col items-center text-center mb-16">
-          
-          <SectionOrnament />
-
-          <div className="flex items-center justify-center gap-3 text-[#c5a880] font-bold uppercase tracking-[0.15em] text-[16px] sm:text-[18px] mt-4 mb-3">
-            <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
-            OUR SERVICES
-            <span className="w-5 h-[2.5px] bg-[#c5a880] rounded-sm"></span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-serif text-brand-dark font-semibold max-w-2xl leading-tight mb-6">
-            Everything You Need <br/> For A Perfect Event
-          </h2>
-          
-          <SectionOrnament />
-        </ScrollReveal>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((svc, i) => {
-            const Icon = svc.icon;
+        {/* Sidebar */}
+        <div className="w-full lg:w-[340px] bg-white border-r border-slate-100 flex flex-col flex-shrink-0 relative lg:sticky lg:top-20 self-start px-6 py-10 lg:pl-10 lg:pr-6">
+          {categories.map((cat, idx) => {
+            const isActive = activeCategory === cat.id;
+            const isNextActive = idx < categories.length - 1 && activeCategory === categories[idx + 1].id;
+            const showBorder = idx < categories.length - 1 && !isActive && !isNextActive;
+            
             return (
-              <ScrollReveal 
-                key={i}
-                animation="animate-slide-up"
-                delay={i % 4 === 0 ? '' : i % 4 === 1 ? 'animate-delay-100' : i % 4 === 2 ? 'animate-delay-200' : 'animate-delay-300'}
-              >
-                <div 
-                  className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] h-full transition-all duration-300 transform hover:-translate-y-1"
+              <React.Fragment key={cat.id}>
+                <button 
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`flex items-center justify-between p-4 rounded-[12px] transition-all w-full text-left group ${isActive ? 'bg-[#FAF5EB]' : 'bg-transparent hover:bg-slate-50'}`}
                 >
-                {/* Icon Circle */}
-                <div className="relative w-[88px] h-[88px] mb-6">
-                  {/* Outer Gold Ring */}
-                  <div className="absolute inset-0 rounded-full border border-[#c5a880] shadow-[0_4px_12px_rgba(197,168,128,0.25)]"></div>
-                  {/* Inner Green Circle */}
-                  <div className="absolute inset-[4px] rounded-full bg-[#052e16] flex items-center justify-center">
-                    <Icon className="text-[#c5a880] w-[34px] h-[34px]" strokeWidth={1.5} />
+                  <div className="flex items-center space-x-5">
+                     <div className={`transition-colors flex-shrink-0 ${isActive ? 'text-[#c5a880]' : 'text-[#c5a880] opacity-90'}`}>
+                       {cat.icon}
+                     </div>
+                     <div className="flex flex-col justify-center">
+                       <h4 className="font-sans font-bold text-[#052e16] text-[14px] tracking-wide uppercase mb-1">{cat.title}</h4>
+                       <p className="font-sans text-slate-500 text-[13px] tracking-wide">{cat.subtitle}</p>
+                     </div>
                   </div>
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-[14px] font-bold text-[#052e16] tracking-wide mb-6 flex-grow flex items-center justify-center whitespace-pre-line leading-relaxed">
-                  {svc.title}
-                </h3>
-                
-                {/* Read More Link */}
-                <button className="flex items-center text-[12px] font-bold text-[#052e16] hover:text-[#c5a880] transition-colors uppercase tracking-widest group">
-                  READ MORE
-                  <ArrowRight className="w-4 h-4 ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className={`w-4 h-4 transition-transform flex-shrink-0 ${isActive ? 'text-[#c5a880]' : 'text-[#c5a880] opacity-60 group-hover:opacity-100 group-hover:translate-x-1'}`} strokeWidth={2} />
                 </button>
-                </div>
-              </ScrollReveal>
+                {showBorder && (
+                  <div className="w-[calc(100%-2rem)] mx-auto h-[1px] bg-slate-100/80 my-1"></div>
+                )}
+              </React.Fragment>
             );
           })}
         </div>
 
-        {/* View All Button */}
-        <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="mt-16 flex justify-center">
-          <Link to="/services" className="bg-brand-dark hover:bg-brand-emerald text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex items-center shadow-xl transition-all duration-300 hover:shadow-brand-dark/20 transform hover:-translate-y-0.5">
-            VIEW ALL SERVICES
-            <ArrowRight className="w-4 h-4 ml-3 text-gold" />
-          </Link>
-        </ScrollReveal>
+        {/* Main Content */}
+        <div className="flex-grow p-6 py-12 lg:p-12 xl:p-16 bg-white animate-fade-in">
+           
+           {/* Title Block */}
+           <div className="flex flex-col items-center text-center mb-12">
+              <div className="flex items-center gap-4 text-[#c5a880] mb-4">
+                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
+                <span className="font-bold tracking-[0.2em] text-[11px] uppercase">OUR SERVICES</span>
+                <div className="w-12 h-[1px] bg-[#c5a880]"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-[38px] font-serif text-[#052e16] font-semibold tracking-wide">
+                Everything You Need For A Perfect Event
+              </h2>
+              <div className="mt-5 flex justify-center">
+                 <div className="w-2 h-2 rotate-45 border border-[#c5a880] flex items-center justify-center p-[1px]">
+                   <div className="w-full h-full bg-[#c5a880]"></div>
+                 </div>
+              </div>
+           </div>
+
+           {/* Grid */}
+           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-8">
+              {servicesList.filter(s => activeCategory === 'all' || s.category === activeCategory).map((svc, idx) => (
+                 <div key={svc.id} className="flex flex-col group cursor-pointer animate-slide-up bg-white p-3 rounded-[24px] border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" style={{ animationDelay: `${idx * 50}ms` }}>
+                    <div className="aspect-[5/4] rounded-[16px] overflow-hidden mb-4">
+                       <img src={svc.img} alt={svc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+                    </div>
+                    <div className="px-1 pb-1 flex flex-col flex-grow">
+                      <h3 className="font-sans font-bold text-[#052e16] text-[15px] mb-2 whitespace-pre-line leading-snug tracking-wide group-hover:text-[#c5a880] transition-colors">
+                        {svc.title}
+                      </h3>
+                      <p className="text-slate-500 font-sans text-[13px] leading-relaxed tracking-wide mt-auto">
+                        {svc.desc}
+                      </p>
+                    </div>
+                 </div>
+              ))}
+              
+              {/* Fallback if category is empty */}
+              {servicesList.filter(s => activeCategory === 'all' || s.category === activeCategory).length === 0 && (
+                <div className="col-span-full py-20 text-center text-slate-400">
+                   <p>More services coming soon to this category.</p>
+                </div>
+              )}
+           </div>
+
+           {/* Custom Quote Banner */}
+           <div className="mt-16 bg-[#FAF5EB] rounded-2xl p-8 lg:px-12 lg:py-10 flex flex-col xl:flex-row items-center justify-between border border-[#f0eae1]/50 shadow-sm">
+              <div className="flex flex-col md:flex-row items-center mb-8 xl:mb-0 md:space-x-8 text-center md:text-left">
+                 <div className="w-20 h-20 rounded-full border border-[#e6d5b8] flex items-center justify-center flex-shrink-0 text-[#c5a880] bg-white mb-6 md:mb-0 shadow-sm">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                    </svg>
+                 </div>
+                 <div>
+                    <h4 className="text-[22px] font-serif text-[#052e16] font-semibold mb-3">Looking for something unique?</h4>
+                    <p className="text-slate-500 font-sans text-[15px] leading-relaxed max-w-lg">Tell us your ideas and we'll create a customized experience just for you.</p>
+                 </div>
+              </div>
+              <a href="/contact" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
+                 GET A CUSTOM QUOTE
+                 <ArrowRight className="w-4 h-4 ml-3" />
+              </a>
+           </div>
+
+        </div>
 
       </div>
     </section>
