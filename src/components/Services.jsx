@@ -103,7 +103,7 @@ const servicesList = [
 const categoryDetails = {
   weddings: {
     title: 'Wedding Planning &\nDecorations',
-    description: 'We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.',
+    description: 'We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.',
     image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80',
     features: [
       { icon: <Calendar strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'End-to-End\nPlanning' },
@@ -128,6 +128,13 @@ const categoryDetails = {
       { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Experienced Wedding Planners' },
       { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Attention to Every Detail' },
       { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Trusted by Hundreds of Couples' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80', title: 'Mandap Decor' },
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Reception Stage' },
+      { img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80', title: 'Wedding Entrance' },
+      { img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80', title: 'Table Setup' },
+      { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Outdoor Wedding' },
     ]
   },
   default: {
@@ -157,6 +164,13 @@ const categoryDetails = {
       { icon: <User strokeWidth={1.5} className="w-5 h-5" />, text: 'Dedicated Professionals' },
       { icon: <Eye strokeWidth={1.5} className="w-5 h-5" />, text: 'Meticulous Attention to Detail' },
       { icon: <Heart strokeWidth={1.5} className="w-5 h-5" />, text: 'Commitment to Excellence' },
+    ],
+    gallery: [
+      { img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80', title: 'Event Setup' },
+      { img: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80', title: 'Stage Design' },
+      { img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80', title: 'Lighting' },
+      { img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', title: 'Floral Decor' },
+      { img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80', title: 'Catering' },
     ]
   }
 };
@@ -189,6 +203,37 @@ const ServiceDetailView = ({ categoryId }) => {
           <p className="text-slate-600 font-sans text-[14.5px] leading-[1.8] max-w-lg mb-12">
             {data.description}
           </p>
+
+          {/* Gallery Section */}
+          {data.gallery && (
+            <div className="mb-12 animate-fade-in w-full xl:w-[110%]" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-8">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
+                  <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
+                </div>
+                <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">
+                  OUR {categoryId === 'weddings' ? 'WEDDING' : 'PREMIUM'} WORK
+                </h4>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1 h-1 rotate-45 bg-[#b78d51]/60"></div>
+                  <div className="w-12 md:w-24 h-[1px] bg-[#b78d51]/60"></div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-5 gap-3 lg:gap-5">
+                {data.gallery.map((item, i) => (
+                  <div key={i} className="flex flex-col items-center group cursor-pointer">
+                    <div className="w-full aspect-[4/3] rounded-[10px] overflow-hidden mb-2 shadow-sm border border-slate-100 relative">
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                    </div>
+                    <h5 className="text-[10px] md:text-[11.5px] font-bold text-[#052e16] tracking-wide text-center leading-tight mt-1">{item.title}</h5>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Features Grid */}
           <div className="flex items-start divide-x divide-[#f0eae1] mb-12 max-w-lg">
@@ -225,70 +270,6 @@ const ServiceDetailView = ({ categoryId }) => {
         </div>
       </div>
 
-      {/* Bottom Information Panel */}
-      <div className="bg-[#FCFBF8] rounded-[24px] border border-[#f0eae1] flex flex-col xl:flex-row overflow-hidden shadow-sm">
-        
-        {/* WHAT WE OFFER */}
-        <div className="flex-1 p-8 lg:p-10 border-b xl:border-b-0 xl:border-r border-[#f0eae1]">
-          <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-10">
-            <div className="w-10 h-[1.5px] bg-[#b78d51]/50"></div>
-            <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">WHAT WE OFFER</h4>
-            <div className="w-10 h-[1.5px] bg-[#b78d51]/50"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-4">
-            {data.offerings.map((offer, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <CheckCircle className="w-4 h-4 text-[#052e16] flex-shrink-0 mt-0.5 fill-[#052e16]/10" strokeWidth={2} />
-                <span className="text-[13px] font-semibold text-[#052e16] leading-snug">{offer}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* OUR PROCESS */}
-        <div className="flex-1 p-8 lg:p-10 border-b xl:border-b-0 xl:border-r border-[#f0eae1] relative">
-          <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-12">
-            <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase">OUR PROCESS</h4>
-          </div>
-          <div className="flex justify-between relative px-2">
-            {/* Connecting line */}
-            <div className="absolute top-6 left-10 right-10 h-[1px] border-t-2 border-dashed border-[#c5a880]/30 -z-0"></div>
-            
-            {data.process.map((proc, i) => (
-              <div key={i} className="flex flex-col items-center text-center relative z-10 w-[72px]">
-                <div className="w-[52px] h-[52px] rounded-full bg-white border border-[#e6d5b8] flex items-center justify-center mb-4 shadow-sm relative">
-                  {proc.icon}
-                  {/* Step Badge */}
-                  <div className="w-[18px] h-[18px] rounded-full bg-[#b78d51] text-white flex items-center justify-center text-[9px] font-bold absolute -bottom-2 border-2 border-white shadow-sm">
-                    {proc.step}
-                  </div>
-                </div>
-                
-                <h5 className="text-[12px] font-bold text-[#052e16] mt-2 mb-1.5">{proc.title}</h5>
-                <p className="text-[10px] text-slate-500 whitespace-pre-line leading-relaxed max-w-[80px]">{proc.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* WHY CHOOSE US? */}
-        <div className="flex-1 p-8 lg:p-10">
-          <div className="flex items-center justify-center gap-4 text-[#b78d51] mb-10">
-            <div className="w-10 h-[1.5px] bg-[#b78d51]/50"></div>
-            <h4 className="font-bold tracking-[0.2em] text-[11px] uppercase whitespace-nowrap">WHY CHOOSE US?</h4>
-            <div className="w-10 h-[1.5px] bg-[#b78d51]/50"></div>
-          </div>
-          <div className="flex flex-col gap-5">
-            {data.whyChooseUs.map((reason, i) => (
-              <div key={i} className="flex items-center gap-4 group cursor-default">
-                <div className="text-[#b78d51] group-hover:scale-110 transition-transform">{reason.icon}</div>
-                <span className="text-[13px] font-semibold text-[#052e16] leading-snug">{reason.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
     </div>
   );
 };
