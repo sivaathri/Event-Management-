@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MessageSquare, ClipboardList, Settings, PartyPopper, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
@@ -181,13 +182,13 @@ export default function ProcessSection() {
 
         {/* Button */}
         <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="mt-20 flex justify-center">
-          <a
-            href="/#about"
+          <Link
+            to="/about"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-[#052e16] hover:bg-[#084221] text-white text-[12px] font-bold uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
           >
             ABOUT US
             <ArrowRight size={16} className="ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </ScrollReveal>
 
       </div>

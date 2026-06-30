@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ChevronRight, Send } from 'lucide-react';
 import footerf2 from '../assets/footerf2.png';
 import footerf1 from '../assets/footerf1.png';
@@ -94,13 +95,18 @@ export default function Footer() {
             </div>
             <ul className="space-y-3">
               {quickLinks.map(link => {
-                const href = link === 'Services' ? '/services' : `/#${link.toLowerCase().replace(' ', '')}`;
+                let href = `/#${link.toLowerCase().replace(' ', '')}`;
+                if (link === 'Services') href = '/services';
+                if (link === 'Portfolio') href = '/portfolio';
+                if (link === 'About Us') href = '/about';
+                if (link === 'Contact Us') href = '/contact';
+
                 return (
                   <li key={link}>
-                    <a href={href} className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                    <Link to={href} className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
                       <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
