@@ -24,7 +24,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/#home' },
-     { name: 'About Us', href: '/#about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact Us', href: '/contact' },
@@ -61,6 +61,7 @@ export default function Header() {
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
                                (link.href === '/services' && location.pathname === '/services') ||
+                               (link.href === '/about' && location.pathname === '/about') ||
                                (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
@@ -138,6 +139,7 @@ export default function Header() {
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
                                (link.href === '/services' && location.pathname === '/services') ||
+                               (link.href === '/about' && location.pathname === '/about') ||
                                (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
