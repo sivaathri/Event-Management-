@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, Briefcase, Music, Image as ImageIcon, CheckCircle, Users, Headset, LayoutGrid, Calendar, Flower, Star, User, Eye, ClipboardList, Settings, MessageSquare, X } from 'lucide-react';
 import ser1 from '../assets/ser1.png';
@@ -644,7 +645,14 @@ const ServiceDetailView = ({ categoryId }) => {
 };
 
 export default function Services() {
+  const location = useLocation();
   const [activeCategory, setActiveCategory] = useState('all');
+
+  useEffect(() => {
+    if (location.state && location.state.activeCategory) {
+      setActiveCategory(location.state.activeCategory);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

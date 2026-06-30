@@ -10,14 +10,14 @@ import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
 
 const homeServices = [
-  { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS' },
-  { icon: PartyPopper, title: 'BIRTHDAY\nPARTIES' },
-  { icon: Presentation, title: 'STAGE\nDECORATION' },
-  { icon: Camera, title: 'PHOTOGRAPHY &\nVIDEOGRAPHY' },
-  { icon: Headphones, title: 'DJ &\nENTERTAINMENT' },
-  { icon: Speaker, title: 'SOUND &\nLIGHTS' },
-  { icon: ConciergeBell, title: 'CATERING\nSERVICES' },
-  { icon: Shield, title: 'BOUNCERS\nSERVICES' },
+  { icon: Heart, title: 'WEDDING PLANNING\n& DECORATIONS', categoryId: 'weddings' },
+  { icon: PartyPopper, title: 'BIRTHDAY\nPARTIES', categoryId: 'social' },
+  { icon: Presentation, title: 'STAGE\nDECORATION', categoryId: 'venue' },
+  { icon: Camera, title: 'PHOTOGRAPHY &\nVIDEOGRAPHY', categoryId: 'photography' },
+  { icon: Headphones, title: 'DJ &\nENTERTAINMENT', categoryId: 'entertainment' },
+  { icon: Speaker, title: 'SOUND &\nLIGHTS', categoryId: 'entertainment' },
+  { icon: ConciergeBell, title: 'CATERING\nSERVICES', categoryId: 'catering' },
+  { icon: Shield, title: 'BOUNCERS\nSERVICES', categoryId: 'support' },
 ];
 
 const SectionOrnament = () => (
@@ -97,7 +97,11 @@ export default function Home() {
               const Icon = svc.icon;
               return (
                 <ScrollReveal key={i} animation="animate-slide-up" delay={i % 4 === 0 ? '' : i % 4 === 1 ? 'animate-delay-100' : i % 4 === 2 ? 'animate-delay-200' : 'animate-delay-300'}>
-                  <div className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] h-full transition-all duration-300 transform hover:-translate-y-1">
+                  <Link 
+                    to="/services"
+                    state={{ activeCategory: svc.categoryId }}
+                    className="bg-white rounded-[24px] p-8 pb-10 flex flex-col items-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1)] h-full transition-all duration-300 transform hover:-translate-y-1 block cursor-pointer group"
+                  >
                     <div className="relative w-[88px] h-[88px] mb-6">
                       <div className="absolute inset-0 rounded-full border border-[#c5a880] shadow-[0_4px_12px_rgba(197,168,128,0.25)]"></div>
                       <div className="absolute inset-[4px] rounded-full bg-[#052e16] flex items-center justify-center">
@@ -107,11 +111,11 @@ export default function Home() {
                     <h3 className="text-[14px] font-bold text-[#052e16] tracking-wide mb-6 flex-grow flex items-center justify-center whitespace-pre-line leading-relaxed">
                       {svc.title}
                     </h3>
-                    <button className="flex items-center text-[12px] font-bold text-[#052e16] hover:text-[#c5a880] transition-colors uppercase tracking-widest group">
+                    <div className="flex items-center text-[12px] font-bold text-[#052e16] group-hover:text-[#c5a880] transition-colors uppercase tracking-widest">
                       READ MORE
                       <ArrowRight className="w-4 h-4 ml-2 text-[#c5a880] transform group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
+                    </div>
+                  </Link>
                 </ScrollReveal>
               );
             })}
