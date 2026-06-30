@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import leaves1 from '../assets/leaves1.png';
@@ -121,10 +122,10 @@ export default function Services() {
 
         {/* View All Button */}
         <ScrollReveal animation="animate-slide-up" delay="animate-delay-100" className="mt-16 flex justify-center">
-          <button className="bg-brand-dark hover:bg-brand-emerald text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex items-center shadow-xl transition-all duration-300 hover:shadow-brand-dark/20 transform hover:-translate-y-0.5">
+          <Link to="/services" className="bg-brand-dark hover:bg-brand-emerald text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex items-center shadow-xl transition-all duration-300 hover:shadow-brand-dark/20 transform hover:-translate-y-0.5">
             VIEW ALL SERVICES
             <ArrowRight className="w-4 h-4 ml-3 text-gold" />
-          </button>
+          </Link>
         </ScrollReveal>
 
       </div>

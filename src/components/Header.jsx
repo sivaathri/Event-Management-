@@ -24,7 +24,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/#home' },
-    { name: 'Services', href: '/#services' },
+    { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'About Us', href: '/#about' },
     { name: 'Testimonials', href: '/#testimonials' },
@@ -61,6 +61,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center justify-center h-[80px] flex-grow px-4 z-20">
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/services' && location.pathname === '/services') ||
                                (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
@@ -68,7 +69,7 @@ export default function Header() {
                   key={link.name}
                   to={link.href}
                   onClick={() => {
-                    if (!link.href.includes('#')) {
+                    if (link.href === '/#home' || !link.href.includes('#')) {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
@@ -137,6 +138,7 @@ export default function Header() {
           <div className="px-4 pt-6 pb-8 space-y-4 flex flex-col h-full bg-[#021C0D]">
             {navLinks.map((link) => {
               const isActive = (link.href === '/portfolio' && location.pathname === '/portfolio') || 
+                               (link.href === '/services' && location.pathname === '/services') ||
                                (link.href === '/contact' && location.pathname === '/contact') ||
                                (link.href === '/#home' && location.pathname === '/');
               return (
@@ -145,7 +147,7 @@ export default function Header() {
                   to={link.href}
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    if (!link.href.includes('#')) {
+                    if (link.href === '/#home' || !link.href.includes('#')) {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}

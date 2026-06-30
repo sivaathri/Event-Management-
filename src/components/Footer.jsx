@@ -93,14 +93,17 @@ export default function Footer() {
               <Divider />
             </div>
             <ul className="space-y-3">
-              {quickLinks.map(link => (
-                <li key={link}>
-                  <a href={`/#${link.toLowerCase().replace(' ', '')}`} className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
-                    <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {quickLinks.map(link => {
+                const href = link === 'Services' ? '/services' : `/#${link.toLowerCase().replace(' ', '')}`;
+                return (
+                  <li key={link}>
+                    <a href={href} className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                      <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -113,7 +116,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map(service => (
                 <li key={service}>
-                  <a href="/#services" className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                  <a href="/services" className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
                     <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
                     {service}
                   </a>
