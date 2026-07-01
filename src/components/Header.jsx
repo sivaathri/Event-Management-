@@ -37,7 +37,7 @@ export default function Header() {
       {/* Curved Header Background Container */}
       <div className="absolute inset-0 flex -z-10 drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)] filter">
         {/* Left Curved Panel (Logo Container Background) */}
-        <div className="w-[290px] h-[115px] sm:w-[340px] sm:h-[120px] flex-shrink-0 transition-all">
+        <div className="w-[290px] h-[120px] sm:w-[340px] flex-shrink-0 transition-all">
           <svg viewBox="0 0 340 120" className="w-full h-full fill-[#021C0D]" preserveAspectRatio="none">
             <path d="M 0,0 L 340,0 L 340,80 C 295,80 275,120 230,120 L 0,120 Z" />
             <path d="M 340,79 C 295,79 275,119 230,119 L 0,119" stroke="#D4AF37" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
