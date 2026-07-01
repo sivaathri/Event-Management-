@@ -16,6 +16,9 @@ export default function Hero() {
         className="absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:calc(50%+60px)_calc(50%-40px)] lg:bg-[position:calc(100%+140px)_calc(50%-40px)] lg:bg-[length:auto_75%] brightness-105 contrast-[1.05] animate-fade-in"
         style={{ backgroundImage: `url(${herobg})` }}
       />
+      {/* White gradient overlay to ensure text readability on mobile and tablet */}
+      <div className="absolute inset-0 z-10  md:via-white/80 pointer-events-none" />
+
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
 
@@ -46,7 +49,7 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-[13px] sm:text-sm md:text-base text-slate-500 max-w-sm md:max-w-md leading-relaxed font-sans font-light animate-slide-up animate-delay-200">
+            <p className="text-[13px] sm:text-sm md:text-base text-slate-600 max-w-sm md:max-w-md leading-relaxed font-sans font-light animate-slide-up animate-delay-200">
               From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary experiences.
             </p>
 
