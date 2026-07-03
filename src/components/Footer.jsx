@@ -9,7 +9,6 @@ const Facebook = ({ size = 24, ...props }) => <svg width={size} height={size} vi
 const Instagram = ({ size = 24, ...props }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" {...props}><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>;
 const Twitter = ({ size = 24, ...props }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>;
 const Linkedin = ({ size = 24, ...props }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M5 21h4v-13h-4v13zm2-14.5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5 1.12 2.5 2.5 2.5zm4.5 14.5h4v-7c0-2.5 3-2.7 3 0v7h4v-8c0-4.5-5.5-4.8-7-2v-3h-4v13z" /></svg>;
-const Pinterest = ({ size = 24, ...props }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.915 2.171-2.915 1.023 0 1.518.769 1.518 1.688 0 1.029-.653 2.568-.994 3.995-.283 1.193.6 2.169 1.777 2.169 2.133 0 3.772-2.25 3.772-5.495 0-2.864-2.066-4.873-5.013-4.873-3.414 0-5.416 2.564-5.416 5.204 0 1.034.398 2.145.894 2.744.098.119.112.225.085.345-.091.376-.295 1.2-.336 1.365-.053.225-.174.271-.403.165-1.499-.691-2.438-2.881-2.438-4.65 0-3.779 2.753-7.258 7.962-7.258 4.173 0 7.4 2.97 7.4 6.929 0 4.14-2.611 7.469-6.242 7.469-1.215 0-2.357-.63-2.761-1.381l-.75 2.85c-.271 1.046-1.006 2.355-1.5 3.149 1.124.346 2.31.536 3.555.536 6.621 0 12-5.373 12-12 0-6.628-5.379-12-12-12z" /></svg>;
 
 export default function Footer() {
   const quickLinks = ['Home', 'About Us', 'Services', 'Portfolio',  'Contact Us'];
@@ -207,7 +206,7 @@ export default function Footer() {
           </p>
           
           <div className="flex space-x-4">
-            {[Facebook, Instagram, Twitter, Linkedin, Pinterest].map((Icon, idx) => (
+            {[Facebook, Instagram, Twitter, Linkedin].map((Icon, idx) => (
               <a 
                 key={idx} 
                 href="#" 
