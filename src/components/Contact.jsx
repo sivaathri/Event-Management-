@@ -18,6 +18,14 @@ export default function Contact() {
     error: null
   });
 
+  const [errors, setErrors] = useState({
+    name: false,
+    phone: false,
+    email: false,
+    eventType: false,
+    message: false
+  });
+
   useEffect(() => {
     if (status.success) {
       const timer = setTimeout(() => {
@@ -34,10 +42,39 @@ export default function Contact() {
       ...prev,
       [name]: value
     }));
+    
+    // Clear validation error when user begins typing/editing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: false
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Perform custom validation
+    const newErrors = {
+      name: !formData.name.trim(),
+      phone: !formData.phone.trim(),
+      email: !formData.email.trim(),
+      eventType: !formData.eventType,
+      message: !formData.message.trim()
+    };
+
+    setErrors(newErrors);
+
+    if (newErrors.name || newErrors.phone || newErrors.email || newErrors.eventType || newErrors.message) {
+      setStatus({
+        submitting: false,
+        success: null,
+        error: 'Please fill in all the required details.'
+      });
+      return;
+    }
+
     setStatus({ submitting: true, success: null, error: null });
 
     const serviceId = 'service_ozfx35k';
@@ -184,29 +221,27 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Input */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Full Name *</label>
+                    <label className={`text-xs font-semibold uppercase tracking-widest font-sans ${errors.name ? 'text-rose-600 font-bold animate-pulse' : 'text-slate-700'}`}>Full Name *</label>
                     <input 
                       type="text" 
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Jane Doe"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
-                      required
+                      className={`w-full bg-slate-50 border ${errors.name ? 'border-rose-400 focus:ring-rose-500/20 focus:border-rose-500' : 'border-slate-200 focus:ring-brand-emerald/20 focus:border-brand-emerald'} rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 transition-all`}
                     />
                   </div>
                   
                   {/* Phone Input */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Phone Number *</label>
+                    <label className={`text-xs font-semibold uppercase tracking-widest font-sans ${errors.phone ? 'text-rose-600 font-bold animate-pulse' : 'text-slate-700'}`}>Phone Number *</label>
                     <input 
                       type="tel" 
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
-                      required
+                      className={`w-full bg-slate-50 border ${errors.phone ? 'border-rose-400 focus:ring-rose-500/20 focus:border-rose-500' : 'border-slate-200 focus:ring-brand-emerald/20 focus:border-brand-emerald'} rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 transition-all`}
                     />
                   </div>
                 </div>
@@ -227,13 +262,12 @@ export default function Contact() {
 
                   {/* Event Type Select */}
                   <div className="space-y-2 relative">
-                    <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Event Type *</label>
+                    <label className={`text-xs font-semibold uppercase tracking-widest font-sans ${errors.eventType ? 'text-rose-600 font-bold animate-pulse' : 'text-slate-700'}`}>Event Type *</label>
                     <select 
                       name="eventType"
                       value={formData.eventType}
                       onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all appearance-none cursor-pointer" 
-                      required
+                      className={`w-full bg-slate-50 border ${errors.eventType ? 'border-rose-400 focus:ring-rose-500/20 focus:border-rose-500' : 'border-slate-200 focus:ring-brand-emerald/20 focus:border-brand-emerald'} rounded-xl px-4 py-3.5 text-sm font-sans text-slate-700 focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer`} 
                     >
                       <option value="" disabled>Select an event type</option>
                       <option value="wedding">Wedding Celebration</option>

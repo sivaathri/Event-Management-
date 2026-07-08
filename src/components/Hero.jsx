@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-24 pb-16 md:pt-28 md:pb-32 overflow-hidden flex items-center bg-white"
+      className="relative min-h-[82vh] md:min-h-screen pt-24 pb-16 md:pt-28 md:pb-32 overflow-hidden flex items-center bg-white"
     >
       {/* Background Image isolated so we can filter its baked-in cream color into pure white */}
       <div 
@@ -17,13 +17,13 @@ export default function Hero() {
         style={{ backgroundImage: `url(${herobg})` }}
       />
       {/* White gradient overlay to ensure text readability on mobile and tablet */}
-      <div className="absolute inset-0 z-10  md:via-white/80 pointer-events-none" />
+      <div className="absolute inset-0 z-10 bg-white/75 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/90 md:to-transparent pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
 
           {/* Left Column: Copy & Actions */}
-          <div className="md:col-span-6 lg:col-span-6 xl:col-span-5 flex flex-col items-start text-left space-y-4 sm:space-y-6 z-20">
+          <div className="md:col-span-6 lg:col-span-6 xl:col-span-5 flex flex-col items-center text-center md:items-start md:text-left space-y-4 sm:space-y-6 z-20">
 
             {/* Tagline */}
             <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-brand-emerald animate-slide-up">
@@ -31,7 +31,7 @@ export default function Hero() {
             </span>
 
             {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-5xl xl:text-[54px] font-serif text-slate-800 leading-[1.12] font-normal tracking-wide animate-slide-up animate-delay-100">
+            <h1 className="text-[26px] sm:text-4xl md:text-[42px] lg:text-5xl xl:text-[54px] font-serif text-slate-900 leading-[1.2] font-normal tracking-wide break-words animate-slide-up animate-delay-100">
               Creating Unforgettable{' '}
               <span className="block text-brand-emerald mt-2 font-medium">
                 Celebrations &
@@ -42,14 +42,14 @@ export default function Hero() {
             </h1>
 
             {/* Horizontal Divider Line with Diamond in the center */}
-            <div className="flex items-center space-x-2 py-1 w-full max-w-[280px] animate-slide-up animate-delay-200">
+            <div className="flex items-center space-x-2 my-3 py-1 w-full max-w-[280px] mx-auto md:mx-0 animate-slide-up animate-delay-200">
               <div className="h-[1px] bg-slate-300 flex-grow"></div>
               <span className="text-brand-emerald text-sm">✦</span>
               <div className="h-[1px] bg-slate-300 flex-grow"></div>
             </div>
 
             {/* Description */}
-            <p className="text-[13px] sm:text-sm md:text-base text-slate-600 max-w-sm md:max-w-md leading-relaxed font-sans font-light animate-slide-up animate-delay-200">
+            <p className="text-sm md:text-base text-slate-700 max-w-sm md:max-w-md leading-relaxed font-sans font-normal animate-slide-up animate-delay-200">
               From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary experiences.
             </p>
 
@@ -57,7 +57,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto animate-slide-up animate-delay-300">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-[#021C0D] text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
+                className="inline-flex items-center justify-center px-6 py-3.5 bg-brand-emerald hover:bg-[#021C0D] text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-lg shadow-brand-emerald/10 hover:shadow-xl hover:shadow-brand-emerald/20 transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap w-full sm:w-auto"
               >
                 Book Consultation
                 <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -65,7 +65,7 @@ export default function Hero() {
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-700 hover:text-brand-emerald border border-slate-300 hover:border-brand-emerald/30 text-xs font-bold uppercase tracking-widest rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap"
+                className="inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-700 hover:text-brand-emerald border border-slate-300 hover:border-brand-emerald/30 text-xs font-bold uppercase tracking-widest rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group whitespace-nowrap w-full sm:w-auto"
               >
                 View Services
                 <ArrowRight size={14} className="ml-2 text-slate-400 group-hover:text-brand-emerald transform group-hover:translate-x-1 transition-transform" />

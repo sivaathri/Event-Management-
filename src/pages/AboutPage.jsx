@@ -79,11 +79,7 @@ export default function AboutPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/about" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]">
-                   OUR STORY
-                   <ArrowRight className="w-4 h-4 ml-3 text-[#b78d51]" />
-                </Link>
-                <Link to="/portfolio" className="bg-white border border-[#e6d5b8] text-[#052e16] hover:bg-[#FAF5EB] px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-sm">
+                <Link to="/portfolio" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-[12px] font-bold tracking-[0.15em] text-[12px] flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]">
                    VIEW PORTFOLIO
                    <ArrowRight className="w-4 h-4 ml-3 text-[#b78d51]" strokeWidth={2} />
                 </Link>
