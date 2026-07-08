@@ -249,14 +249,14 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Email Input */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Email Address</label>
+                    <label className={`text-xs font-semibold uppercase tracking-widest font-sans ${errors.email ? 'text-rose-600 font-bold animate-pulse' : 'text-slate-700'}`}>Email Address *</label>
                     <input 
                       type="email" 
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="jane@example.com"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
+                      className={`w-full bg-slate-50 border ${errors.email ? 'border-rose-400 focus:ring-rose-500/20 focus:border-rose-500' : 'border-slate-200 focus:ring-brand-emerald/20 focus:border-brand-emerald'} rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 transition-all`}
                     />
                   </div>
 
@@ -283,14 +283,14 @@ export default function Contact() {
 
                 {/* Message Input */}
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Your Message</label>
+                  <label className={`text-xs font-semibold uppercase tracking-widest font-sans ${errors.message ? 'text-rose-600 font-bold animate-pulse' : 'text-slate-700'}`}>Your Message *</label>
                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="4" 
                     placeholder="Tell us a little bit about your event, expected date, and guest count..."
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all resize-none"
+                    className={`w-full bg-slate-50 border ${errors.message ? 'border-rose-400 focus:ring-rose-500/20 focus:border-rose-500' : 'border-slate-200 focus:ring-brand-emerald/20 focus:border-brand-emerald'} rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 transition-all resize-none`}
                   ></textarea>
                 </div>
 

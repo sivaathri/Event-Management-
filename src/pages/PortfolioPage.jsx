@@ -96,26 +96,26 @@ export default function PortfolioPage() {
     <main className="flex-grow bg-white animate-fade-in relative overflow-x-hidden">
       
       {/* Portfolio Header with Soft Fading Image */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-36 pb-8 md:pt-32 md:pb-16 overflow-hidden">
         
         {/* Full-width backdrop image */}
         <div className="absolute inset-0 -z-10 select-none pointer-events-none">
           {/* Vignette Gradients to keep text readable */}
-        
           <img 
             src={portfliobg} 
             alt="Faded Arch Background" 
-            className="w-full h-full object-cover opacity-95 object-right"
+            className="w-full h-full object-cover opacity-95 object-right z-0"
           />
+          <div className="absolute inset-0 bg-white/80 md:hidden z-10" />
         </div>
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 text-[13px] font-sans text-slate-500 mb-8 mt-2">
-            <Link to="/" className="hover:text-[#b78d51] transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-[13px] font-sans text-slate-700 mb-8 mt-2">
+            <Link to="/" className="hover:text-[#b78d51] transition-colors font-medium">Home</Link>
             <span className="text-[#c5a880] font-sans font-bold">&gt;</span>
-            <span className="text-slate-800 font-sans font-medium">Portfolio</span>
+            <span className="text-slate-900 font-sans font-semibold">Portfolio</span>
           </div>
 
           {/* Heading Content */}
@@ -124,15 +124,15 @@ export default function PortfolioPage() {
               OUR PORTFOLIO
               <span className="w-8 h-[1.5px] bg-[#c5a880]"></span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-serif text-[#052e16] font-semibold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-serif text-[#052e16] font-semibold leading-tight mb-3">
               Moments We've<br />Designed Beautifully
             </h1>
-            <div className="flex items-center gap-2 text-[#c5a880] mb-6">
+            <div className="flex items-center gap-2 text-[#c5a880] mt-3 mb-6">
               <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880]"></div>
               <div className="w-1.5 h-1.5 rotate-45 bg-[#c5a880]"></div>
               <div className="w-16 h-[1px] bg-[#c5a880]"></div>
             </div>
-            <p className="text-slate-500 font-sans text-[14px] md:text-[15px] leading-relaxed max-w-md">
+            <p className="text-slate-800 font-sans text-[14.5px] md:text-[15.5px] leading-relaxed font-normal max-w-md">
               Explore our handpicked collection of unforgettable events. Each celebration reflects our creativity, precision, and passion for perfection.
             </p>
           </div>
@@ -145,8 +145,8 @@ export default function PortfolioPage() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Category Tabs Pill Container */}
-          <div className="flex justify-center mb-16">
-            <div className="bg-white border border-[#FAF5EB] rounded-[24px] p-2.5 shadow-[0_4px_25px_rgba(0,0,0,0.015)] flex flex-wrap justify-center items-center gap-3 md:gap-5 max-w-full">
+          <div className="flex justify-center mb-12 md:mb-16">
+            <div className="bg-white border border-[#FAF5EB] rounded-[24px] p-2.5 shadow-[0_4px_25px_rgba(0,0,0,0.015)] grid grid-cols-2 gap-3 sm:grid-cols-3 md:flex md:flex-wrap md:justify-center md:items-center md:gap-4 w-full md:w-auto">
               {categories.map((cat) => {
                 const Icon = cat.icon;
                 const isActive = activeTab === cat.id;
@@ -154,7 +154,7 @@ export default function PortfolioPage() {
                   <button
                     key={cat.id}
                     onClick={() => setActiveTab(cat.id)}
-                    className={`flex items-center gap-3 px-5 py-3.5 rounded-[14px] text-[13.5px] font-sans font-medium transition-all duration-300 whitespace-nowrap ${
+                    className={`flex items-center justify-center md:justify-start gap-3 px-5 py-3.5 rounded-[14px] text-[13.5px] font-sans font-medium transition-all duration-300 ${
                       isActive 
                         ? 'bg-[#021C0D] text-white shadow-sm' 
                         : 'text-[#052e16] hover:bg-[#FAF5EB]/50 hover:text-[#b78d51]'

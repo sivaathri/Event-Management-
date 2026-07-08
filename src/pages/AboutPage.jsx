@@ -293,7 +293,7 @@ export default function AboutPage() {
             <div className="bg-white border border-[#FAF5EB] rounded-[32px] p-6 md:py-10 md:px-12 shadow-[0_8px_30px_rgba(0,0,0,0.015)] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
               
               {/* Years of Experience */}
-              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+              <div className="flex items-center space-x-5 justify-start md:justify-center w-full max-w-[240px] md:max-w-none mx-auto md:mx-0 relative p-2 lg:px-4">
                 <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
                   <Calendar className="w-7 h-7 stroke-[1.5]" />
                 </div>
@@ -306,7 +306,7 @@ export default function AboutPage() {
               </div>
 
               {/* Events Completed */}
-              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+              <div className="flex items-center space-x-5 justify-start md:justify-center w-full max-w-[240px] md:max-w-none mx-auto md:mx-0 relative p-2 lg:px-4">
                 <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
                   <PartyPopper className="w-7 h-7 stroke-[1.5]" />
                 </div>
@@ -319,7 +319,7 @@ export default function AboutPage() {
               </div>
 
               {/* Happy Clients */}
-              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+              <div className="flex items-center space-x-5 justify-start md:justify-center w-full max-w-[240px] md:max-w-none mx-auto md:mx-0 relative p-2 lg:px-4">
                 <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
                   <Users className="w-7 h-7 stroke-[1.5]" />
                 </div>
@@ -332,7 +332,7 @@ export default function AboutPage() {
               </div>
 
               {/* Team Members */}
-              <div className="flex items-center space-x-5 justify-center relative p-2 lg:px-4">
+              <div className="flex items-center space-x-5 justify-start md:justify-center w-full max-w-[240px] md:max-w-none mx-auto md:mx-0 relative p-2 lg:px-4">
                 <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
                   <Award className="w-7 h-7 stroke-[1.5]" />
                 </div>
@@ -345,7 +345,7 @@ export default function AboutPage() {
               </div>
 
               {/* Cities Served */}
-              <div className="flex items-center space-x-5 justify-center p-2 lg:px-4">
+              <div className="flex items-center space-x-5 justify-start md:justify-center w-full max-w-[240px] md:max-w-none mx-auto md:mx-0 p-2 lg:px-4">
                 <div className="w-16 h-16 rounded-full border border-[#e6d5b8]/50 bg-[#FAF5EB]/65 flex items-center justify-center text-[#c5a880] shadow-sm flex-shrink-0">
                   <MapPin className="w-7 h-7 stroke-[1.5]" />
                 </div>
