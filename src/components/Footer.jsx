@@ -202,7 +202,7 @@ export default function Footer() {
       <div className="border-t border-[#c5a880]/40 relative z-20 bg-[#FCFBF8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative z-40">
           <p className="text-[13.5px] text-slate-500 font-medium tracking-wide text-center md:text-left">
-            © 2026 <span className="font-bold text-[#052e16]">Pondy IT Solutions.</span> All Rights Reserved.
+            © 2026 <span className="font-bold text-[#052e16]">Pondy IT Solutions.</span> 
           </p>
           
           <div className="flex space-x-4">
