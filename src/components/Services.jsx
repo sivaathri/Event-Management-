@@ -647,6 +647,7 @@ const ServiceDetailView = ({ categoryId }) => {
 export default function Services() {
   const location = useLocation();
   const [activeCategory, setActiveCategory] = useState('all');
+  const contentRef = React.useRef(null);
 
   useEffect(() => {
     if (location.state && location.state.activeCategory) {
@@ -655,7 +656,20 @@ export default function Services() {
   }, [location.state]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (activeCategory === 'all') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (contentRef.current) {
+      // Calculate offset for smooth scrolling to detail content below the header
+      const element = contentRef.current;
+      const headerOffset = 90; // account for sticky header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }, [activeCategory]);
 
   return (
@@ -703,7 +717,7 @@ export default function Services() {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-grow px-6 pb-8 pt-6 lg:px-12 lg:pb-10 lg:pt-8 xl:px-16 xl:pb-12">
+        <div ref={contentRef} className="flex-grow px-6 pb-8 pt-6 lg:px-12 lg:pb-10 lg:pt-8 xl:px-16 xl:pb-12">
           
           {/* Global Breadcrumb */}
           <div className="flex items-center gap-2 text-[13px] font-medium text-slate-500 mb-8 xl:mb-10">
