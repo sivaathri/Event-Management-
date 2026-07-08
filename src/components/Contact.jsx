@@ -1,8 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Sparkles } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    eventType: '',
+    message: ''
+  });
+  
+  const [status, setStatus] = useState({
+    submitting: false,
+    success: null,
+    error: null
+  });
+
+  useEffect(() => {
+    if (status.success) {
+      const timer = setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: null }));
+      }, 60000); // 1 minute (60000ms)
+
+      return () => clearTimeout(timer);
+    }
+  }, [status.success]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus({ submitting: true, success: null, error: null });
+
+    const serviceId = 'service_ozfx35k';
+    const templateId = 'template_luq5jqc';
+    const publicKey = 'P7UWGav_wG-WGTpRs';
+
+    // Send template parameters mapping standard fields to your template fields
+    const templateParams = {
+      from_name: formData.name,
+      name: formData.name,
+      phone: formData.phone,
+      phone_number: formData.phone,
+      from_email: formData.email,
+      email: formData.email,
+      reply_to: formData.email,
+      event_type: formData.eventType,
+      message: formData.message
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('EmailJS Success:', response.status, response.text);
+        setStatus({
+          submitting: false,
+          success: 'Thank you! Your message has been sent successfully. We will get back to you shortly.',
+          error: null
+        });
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          eventType: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        setStatus({
+          submitting: false,
+          success: null,
+          error: 'Failed to send message. Please check your network or reach out directly at hello@lightsevents.com.'
+        });
+      });
+  };
+
   return (
     <section id="contact" className="py-24 bg-cream-light relative overflow-hidden">
       
@@ -100,13 +180,16 @@ export default function Contact() {
                 <Sparkles size={120} className="text-gold" />
               </div>
 
-              <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Input */}
                   <div className="space-y-2">
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Full Name *</label>
                     <input 
                       type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Jane Doe"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
                       required
@@ -118,6 +201,9 @@ export default function Contact() {
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Phone Number *</label>
                     <input 
                       type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="+91 98765 43210"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
                       required
@@ -131,6 +217,9 @@ export default function Contact() {
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Email Address</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="jane@example.com"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all"
                     />
@@ -139,7 +228,13 @@ export default function Contact() {
                   {/* Event Type Select */}
                   <div className="space-y-2 relative">
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Event Type *</label>
-                    <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all appearance-none cursor-pointer" required defaultValue="">
+                    <select 
+                      name="eventType"
+                      value={formData.eventType}
+                      onChange={handleChange}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all appearance-none cursor-pointer" 
+                      required
+                    >
                       <option value="" disabled>Select an event type</option>
                       <option value="wedding">Wedding Celebration</option>
                       <option value="corporate">Corporate Event / Launch</option>
@@ -156,19 +251,44 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-sans">Your Message</label>
                   <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows="4" 
                     placeholder="Tell us a little bit about your event, expected date, and guest count..."
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald transition-all resize-none"
                   ></textarea>
                 </div>
 
+                {/* Success & Error Status Messages */}
+                {status.success && (
+                  <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-sm font-sans">
+                    {status.success}
+                  </div>
+                )}
+                {status.error && (
+                  <div className="p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-sm font-sans">
+                    {status.error}
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button 
                   type="submit" 
-                  className="w-full flex items-center justify-center space-x-2 bg-brand-emerald hover:bg-brand-dark text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs transition-colors duration-300 shadow-md shadow-brand-emerald/20 hover:shadow-lg hover:shadow-brand-emerald/30 group mt-2"
+                  disabled={status.submitting}
+                  className="w-full flex items-center justify-center space-x-2 bg-brand-emerald hover:bg-brand-dark text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-md shadow-brand-emerald/20 hover:shadow-lg hover:shadow-brand-emerald/30 group mt-2 disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
-                  <Send size={16} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {status.submitting ? (
+                    <>
+                      <span>Sending...</span>
+                      <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <Send size={16} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
