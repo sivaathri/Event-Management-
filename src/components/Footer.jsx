@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ChevronRight, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import footerf2 from '../assets/footerf2.png';
 import footerf1 from '../assets/footerf1.png';
 import Logo from './Logo';
@@ -130,68 +130,44 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter & Creative */}
-          <div className="md:col-span-4 lg:col-span-3 flex flex-col mt-0 md:mt-6 lg:mt-10">
-            <div className="inline-flex flex-col w-max">
-              <h4 className="font-serif text-[#052e16] font-bold tracking-widest text-[15px] uppercase mb-1.5">Newsletter</h4>
-              <Divider />
-            </div>
-            <p className="text-[14px] text-slate-600 mb-6 leading-relaxed font-medium">
-              Subscribe to our newsletter to get the latest updates and offers.
-            </p>
-            
-            {/* Input Box */}
-            <div className="flex items-center bg-white border border-[#c5a880]/40 rounded-xl p-1 shadow-sm mb-12 relative z-20">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-grow bg-transparent px-3 py-2.5 text-[15px] outline-none placeholder:text-slate-500 font-medium text-slate-700 w-full"
-              />
-              <button className="bg-[#052e16] hover:bg-[#0a4221] text-white p-3 rounded-lg transition-colors flex-shrink-0 shadow-md">
-                <Send size={18} className="-ml-0.5" />
-              </button>
-            </div>
-
-            {/* Creative Signature */}
-            <div className="flex flex-col items-center mt-6">
-              {/* Ornate Divider */}
-              <div className="flex items-center justify-center mb-5 w-full">
-                <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
+          {/* Column 4: Creative Signature */}
+          <div className="md:col-span-4 lg:col-span-3 flex flex-col items-center justify-start mt-0 md:mt-6 lg:mt-10">
+            {/* Ornate Divider */}
+            <div className="flex items-center justify-center mb-5 w-full">
+              <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
+              
+              <div className="flex items-center mx-1">
+                <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
+                  <path d="M0 6 C8 6 12 1 16 6 C18 9 21 9 24 6" />
+                </svg>
                 
-                <div className="flex items-center mx-1">
-                  <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
-                    <path d="M0 6 C8 6 12 1 16 6 C18 9 21 9 24 6" />
-                  </svg>
-                  
-                  <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-1">
-                    <div className="w-[3px] h-[3px] bg-[#c5a880]"></div>
-                  </div>
-                  
-                  <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
-                    <path d="M24 6 C16 6 12 1 8 6 C6 9 3 9 0 6" />
-                  </svg>
-                </div>
-
-                <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
-              </div>
-              
-              <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
-                LET'S CREATE
-              </h5>
-              <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
-                Something Beautiful
-              </div>
-              
-              {/* Bottom Divider */}
-              <div className="flex items-center justify-center mt-5 w-full">
-                <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
-                <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-3">
+                <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-1">
                   <div className="w-[3px] h-[3px] bg-[#c5a880]"></div>
                 </div>
-                <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
+                
+                <svg width="24" height="12" viewBox="0 0 24 12" className="stroke-[#c5a880] fill-none stroke-[1.2px]">
+                  <path d="M24 6 C16 6 12 1 8 6 C6 9 3 9 0 6" />
+                </svg>
               </div>
-            </div>
 
+              <div className="w-16 md:w-20 h-[1px] bg-[#c5a880]/60"></div>
+            </div>
+            
+            <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
+              LET'S CREATE
+            </h5>
+            <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
+              Something Beautiful
+            </div>
+            
+            {/* Bottom Divider */}
+            <div className="flex items-center justify-center mt-5 w-full">
+              <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
+              <div className="w-2.5 h-2.5 rotate-45 border border-[#c5a880] flex items-center justify-center mx-3">
+                <div className="w-[3px] h-[3px] bg-[#c5a880]"></div>
+              </div>
+              <div className="w-20 h-[1px] bg-[#c5a880]/60"></div>
+            </div>
           </div>
         
         </div>
