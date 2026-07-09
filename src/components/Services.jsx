@@ -661,7 +661,7 @@ export default function Services() {
     } else if (contentRef.current) {
       // Calculate offset for smooth scrolling to detail content below the header
       const element = contentRef.current;
-      const headerOffset = 90; // account for sticky header height
+      const headerOffset = 140; // account for sticky header height
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -685,7 +685,7 @@ export default function Services() {
       <div className="flex flex-col lg:flex-row w-full max-w-[1600px] mx-auto">
         
         {/* Sidebar */}
-        <div className="w-full lg:w-[340px] border-r border-slate-100 flex flex-col flex-shrink-0 relative lg:sticky lg:top-20 self-start px-6 py-10 lg:pl-10 lg:pr-6">
+        <div className="w-full lg:w-[340px] border-r border-slate-100 flex flex-col flex-shrink-0 relative lg:sticky lg:top-32 self-start px-6 py-10 lg:pl-10 lg:pr-6">
           {categories.map((cat, idx) => {
             const isActive = activeCategory === cat.id;
             const isNextActive = idx < categories.length - 1 && activeCategory === categories[idx + 1].id;

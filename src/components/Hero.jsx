@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[82vh] md:min-h-screen pt-24 pb-16 md:pt-28 md:pb-32 overflow-hidden flex items-center bg-white"
+      className="relative min-h-[82vh] md:min-h-screen pt-36 pb-16 md:pt-44 md:pb-32 overflow-hidden flex items-center bg-white"
     >
       {/* Background Image isolated so we can filter its baked-in cream color into pure white */}
       <div 

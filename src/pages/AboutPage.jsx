@@ -34,7 +34,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main className="flex-grow pt-24 bg-white animate-fade-in relative overflow-x-hidden">
+    <main className="flex-grow pt-36 bg-white animate-fade-in relative overflow-x-hidden">
       {/* Background Decorative Leaves */}
       <img src={leaves1} alt="" className="absolute left-0 top-[15%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-80 z-10 pointer-events-none transform -translate-x-[20%]" />
       <img src={leaves2} alt="" className="absolute right-0 top-[40%] w-[100px] md:w-[160px] lg:w-[200px] object-contain opacity-80 z-10 pointer-events-none transform translate-x-[20%]" />
