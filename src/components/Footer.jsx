@@ -32,20 +32,20 @@ export default function Footer() {
   );
 
   return (
-    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-4 mt-auto">
+    <footer className="relative bg-[#FCFBF8] text-slate-700 overflow-hidden font-sans pt-16 md:pt-24 mt-auto">
       
       {/* Decorative Floral Left */}
       <img 
         src={footerf2} 
         alt="" 
-        className="absolute bottom-0 left-[-10px] lg:left-[-30px] w-[80px] sm:w-[130px] md:w-[160px] lg:w-[200px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 left-[-10px] lg:left-[-30px] w-[80px] sm:w-[130px] md:w-[160px] lg:w-[200px] object-contain opacity-40 md:opacity-90 pointer-events-none z-10"
       />
       
       {/* Decorative Floral Right */}
       <img 
         src={footerf1} 
         alt="" 
-        className="absolute bottom-0 right-[-10px] lg:right-[-20px] w-[70px] sm:w-[110px] md:w-[140px] lg:w-[190px] object-contain opacity-40 md:opacity-90 pointer-events-none z-30"
+        className="absolute bottom-0 right-[-10px] lg:right-[-20px] w-[70px] sm:w-[110px] md:w-[140px] lg:w-[190px] object-contain opacity-40 md:opacity-90 pointer-events-none z-10"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
@@ -156,7 +156,7 @@ export default function Footer() {
             <h5 className="font-serif text-[#052e16] font-medium tracking-[0.25em] uppercase text-[18px] text-center w-full relative z-10">
               LET'S CREATE
             </h5>
-            <div className="text-[36px] sm:text-5xl md:text-6xl text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
+            <div className="text-[32px] sm:text-[40px] md:text-[36px] lg:text-[38px] xl:text-[42px] text-[#c5a880] text-center w-full -mt-2 relative z-20 pr-2 whitespace-nowrap" style={{ fontFamily: "'Great Vibes', 'Brush Script MT', cursive" }}>
               Something Beautiful
             </div>
             

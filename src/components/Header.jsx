@@ -6,19 +6,32 @@ import Logo from './Logo';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Detect scroll to adjust styles if needed
+  // Detect scroll to adjust styles and toggle visibility on scroll direction
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      if (currentScrollY < 50) {
+        setShowHeader(true);
+      } else if (currentScrollY > lastScrollY) {
+        setShowHeader(false); // Scrolling down
+      } else {
+        setShowHeader(true); // Scrolling up
+      }
+      setLastScrollY(currentScrollY);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const location = useLocation();
 
@@ -32,7 +45,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <header className={`fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 ${
+      showHeader ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       
       {/* Curved Header Background Container */}
       <div className="absolute inset-0 flex -z-10 drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)] filter">
