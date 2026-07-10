@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, Briefcase, Music, Image as ImageIcon, CheckCircle, Users, Headset, LayoutGrid, Calendar, Flower, Star, User, Eye, ClipboardList, Settings, MessageSquare, X } from 'lucide-react';
 import ser1 from '../assets/ser1.png';
@@ -523,14 +523,14 @@ const ServiceDetailView = ({ categoryId }) => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="/contact" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-lg hover:shadow-xl">
+            <Link to="/contact" className="bg-[#052e16] hover:bg-[#0a4221] text-white px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-lg hover:shadow-xl">
                GET A CUSTOM QUOTE
                <ArrowRight className="w-4 h-4 ml-3 text-[#b78d51]" />
-            </a>
-            <a href="/portfolio" className="bg-white border border-[#e6d5b8] text-[#052e16] hover:bg-[#FAF5EB] px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-sm">
+            </Link>
+            <Link to="/portfolio" className="bg-white border border-[#e6d5b8] text-[#052e16] hover:bg-[#FAF5EB] px-8 py-4 rounded-[12px] font-bold tracking-[0.1em] text-[12px] flex items-center justify-center transition-colors shadow-sm">
                VIEW PORTFOLIO
                <ArrowRight className="w-4 h-4 ml-3 text-[#b78d51]" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -602,10 +602,10 @@ const ServiceDetailView = ({ categoryId }) => {
                </p>
             </div>
          </div>
-         <a href="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
+         <Link to="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
             GET A CUSTOM QUOTE
             <ArrowRight className="w-4 h-4 ml-3 text-[#021C0D]" />
-         </a>
+         </Link>
       </div>
 
       {/* Lightbox Modal */}
@@ -721,7 +721,7 @@ export default function Services() {
           
           {/* Global Breadcrumb */}
           <div className="flex items-center gap-2 text-[13px] font-medium text-slate-500 mb-8 xl:mb-10">
-            <a href="/" className="hover:text-[#b78d51] cursor-pointer transition-colors">Home</a>
+            <Link to="/" className="hover:text-[#b78d51] cursor-pointer transition-colors font-medium">Home</Link>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#c5a880] mx-1"><path d="M9 18l6-6-6-6"/></svg>
             <span className="hover:text-[#b78d51] cursor-pointer transition-colors" onClick={() => { setActiveCategory('all'); window.scrollTo(0,0); }}>Services</span>
             {activeCategory !== 'all' && (
@@ -791,10 +791,10 @@ export default function Services() {
                        <p className="text-[#a3b3a9] font-sans text-sm md:text-[15px] leading-relaxed max-w-xl">Let's create a celebration you and your guests will cherish forever.</p>
                     </div>
                  </div>
-                 <a href="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
+                 <Link to="/contact" className="bg-[#D4AF37] hover:bg-[#c5a880] text-[#021C0D] px-8 py-4 rounded-xl font-bold tracking-[0.15em] text-[13px] flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] whitespace-nowrap">
                     GET A CUSTOM QUOTE
                     <ArrowRight className="w-4 h-4 ml-3 text-[#021C0D]" />
-                 </a>
+                 </Link>
               </div>
             </div>
           ) : (

@@ -10,13 +10,19 @@ import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 
 export default function App() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     // Ensure we start at the top when the app mounts (e.g. on refresh)
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
 
   return (
     <div className="min-h-screen flex flex-col font-sans selection:bg-brand-emerald/20 selection:text-brand-dark overflow-x-hidden w-full relative">

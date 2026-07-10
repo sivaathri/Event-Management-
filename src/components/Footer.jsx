@@ -121,10 +121,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map(service => (
                 <li key={service}>
-                  <a href="/services" className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
+                  <Link to="/services" className="flex items-center text-[14px] font-medium text-slate-600 hover:text-[#c5a880] transition-colors group">
                     <ChevronRight size={14} className="mr-2 text-slate-400 group-hover:text-[#c5a880] transition-colors" />
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
