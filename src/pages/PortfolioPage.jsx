@@ -84,8 +84,8 @@ const portfolioItems = [
 
 export default function PortfolioPage() {
   useSEO({
-    title: 'Portfolio | LIGHTS - Luxury Event Management',
-    description: "Explore our handpicked collection of beautiful events including elegant weddings, corporate galas, birthday parties, and live concert stage designs."
+    title: 'Our Portfolio | Luxury Event Management Puducherry & Pondicherry',
+    description: 'Explore our gallery of luxury weddings, corporate events, and stage shows planned by LIGHTS in Pondicherry (Puducherry) and surrounding regions.'
   });
 
   const [activeTab, setActiveTab] = useState('all');

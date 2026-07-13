@@ -46,8 +46,8 @@ const SectionOrnament = () => (
 
 export default function Home() {
   useSEO({
-    title: 'LIGHTS - Luxury Event Management by NDJ Groups',
-    description: 'From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary, luxury experiences. Professional planning and design.'
+    title: 'LIGHTS | Best Event Management in Pondicherry & Puducherry',
+    description: 'LIGHTS Event Management is the premier luxury event planner in Pondicherry & Puducherry. We design stunning weddings, corporate events, and stage decorations.'
   });
 
   const testimonials = [

@@ -148,7 +148,7 @@ export default function Contact() {
                 We'd love to hear about your dream event.
               </h3>
               <p className="text-slate-600 font-sans text-sm leading-relaxed font-light">
-                Whether you're planning a grand wedding, a corporate gala, or an intimate private gathering, our team of expert planners is ready to bring your vision to life with flawless precision.
+                Whether you're planning a grand wedding, a corporate gala, or an intimate private gathering in Pondicherry or Puducherry, our team of expert planners is ready to bring your vision to life with flawless precision.
               </p>
             </div>
 
@@ -161,8 +161,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-serif font-semibold text-slate-900 text-sm tracking-wide">Our Office</h4>
                   <p className="text-sm text-slate-500 font-sans mt-1 leading-relaxed">
-                    123 Luxury Avenue, Phase 2<br />
-                    Chennai, Tamil Nadu 600001
+                    White Town,<br />
+                    Puducherry (Pondicherry) 605001
                   </p>
                 </div>
               </div>

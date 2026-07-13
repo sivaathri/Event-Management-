@@ -105,7 +105,7 @@ const servicesList = [
 const categoryDetails = {
   weddings: {
     title: 'Wedding Planning &\nDecorations',
-    description: 'We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.We create timeless weddings filled with elegance, emotions, and unforgettable moments. From planning to the perfect decor, we handle every detail to make your big day truly magical.',
+    description: 'We plan and design exquisite weddings in Pondicherry and Puducherry, filled with elegance, emotions, and unforgettable moments. From stage decorations to day-of coordination, we handle every detail to make your big day truly magical.',
     image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80',
     features: [
       { icon: <Calendar strokeWidth={1.5} className="w-6 h-6 text-[#c5a880]" />, title: 'End-to-End\nPlanning' },
@@ -742,7 +742,7 @@ export default function Services() {
                    <div className="w-12 h-[1.5px] bg-[#b78d51]"></div>
                  </div>
                  <h2 className="text-3xl md:text-4xl lg:text-[38px] font-serif text-[#052e16] font-semibold tracking-wide">
-                   Everything You Need For A Perfect Event
+                   Perfect Event Management in Pondicherry & Puducherry
                  </h2>
                  <div className="mt-5 flex justify-center">
                     <div className="w-2 h-2 rotate-45 border border-[#c5a880] flex items-center justify-center p-[1px]">

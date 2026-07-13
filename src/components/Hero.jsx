@@ -50,7 +50,7 @@ export default function Hero() {
 
             {/* Description */}
             <p className="text-sm md:text-base text-slate-700 max-w-sm md:max-w-md leading-relaxed font-sans font-normal animate-slide-up animate-delay-200">
-              From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary experiences.
+              From grand weddings to corporate galas, LIGHTS is the leading luxury event management company in Pondicherry & Puducherry, transforming your vision into extraordinary experiences.
             </p>
 
             {/* Buttons */}

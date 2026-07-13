@@ -4,8 +4,8 @@ import useSEO from '../hooks/useSEO';
 
 export default function ServicesPage() {
   useSEO({
-    title: 'Our Services | LIGHTS - Luxury Event Management',
-    description: 'We offer custom wedding planning, stage decorations, professional photography, sound and lights setup, DJ entertainment, luxury catering, and bouncers services.'
+    title: 'Our Services | Wedding Planning & Decor in Pondicherry & Puducherry',
+    description: 'Premium event management services in Puducherry & Pondicherry. Custom wedding planning, stage decorations, catering, photography, sound & lighting, and security.'
   });
 
   return (

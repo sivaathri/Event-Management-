@@ -31,8 +31,8 @@ const SectionOrnament = () => (
 
 export default function AboutPage() {
   useSEO({
-    title: 'About Us | LIGHTS - Luxury Event Management',
-    description: 'Learn about our history, our passion, commitment, creativity, and journey at LIGHTS Event Management. We design and deliver extraordinary experiences that leave a lasting impression.'
+    title: 'About Us | Top Event Planners in Puducherry & Pondicherry',
+    description: 'Discover LIGHTS Event Management, the leading luxury decorators and planners in Pondicherry (Puducherry). Planning and coordinating premium celebrations since 2013.'
   });
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-slate-600 font-sans text-[14.5px] leading-[1.8] mb-6">
-                At LIGHTS Event Management, we transform your dreams into unforgettable celebrations. With creativity, precision, and passion, we design and deliver extraordinary experiences that leave a lasting impression.
+                At LIGHTS Event Management, we are proud to be the premier event planners in Pondicherry and Puducherry, transforming your dreams into unforgettable celebrations. With creativity, precision, and passion, we design and deliver extraordinary experiences that leave a lasting impression.
               </p>
               <p className="text-slate-600 font-sans text-[14.5px] leading-[1.8] mb-8">
                 From intimate gatherings to grand celebrations, our dedicated team ensures every detail is flawlessly executed, making your special moments truly magical.
@@ -285,7 +285,7 @@ export default function AboutPage() {
                 <span className="text-[17px] font-bold text-[#c5a880] font-serif mb-2">Today</span>
                 <h4 className="font-sans font-bold text-[#052e16] text-[15px] md:text-[16px] mb-2">Creating Memories</h4>
                 <p className="text-slate-500 font-sans text-[13.5px] leading-relaxed max-w-[240px]">
-                  Continuing our journey of creating extraordinary experiences across cities.
+                  Continuing our journey of creating extraordinary experiences across Pondicherry, Puducherry, and surrounding regions.
                 </p>
               </div>
 

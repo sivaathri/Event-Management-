@@ -80,7 +80,7 @@ export default function Footer() {
                   <div className="w-10 h-10 rounded-full border border-[#052e16] flex items-center justify-center flex-shrink-0 text-[#052e16]">
                     <MapPin size={16} />
                   </div>
-                  <span className="text-[15px] text-slate-700 font-medium">Pondicherry, India</span>
+                  <span className="text-[15px] text-slate-700 font-medium">Puducherry (Pondicherry), India</span>
                 </div>
               </div>
             </div>

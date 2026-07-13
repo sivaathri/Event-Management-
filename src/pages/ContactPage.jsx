@@ -4,8 +4,8 @@ import useSEO from '../hooks/useSEO';
 
 export default function ContactPage() {
   useSEO({
-    title: 'Contact Us | LIGHTS - Luxury Event Management',
-    description: 'Get in touch with LIGHTS Event Management today. Request a custom quote, book a consultation, or ask questions about our luxury event design and planning services.'
+    title: 'Contact Us | Best Event Decorators in Pondicherry & Puducherry',
+    description: 'Get a custom quote from LIGHTS, the top-rated event organizers in Pondicherry & Puducherry. Book a consultation for weddings, corporate events, and parties.'
   });
 
   return (
