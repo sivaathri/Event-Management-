@@ -11,6 +11,7 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+import useSEO from '../hooks/useSEO';
 import portfliobg from '../assets/portfliobg.png';
 
 const categories = [
@@ -82,6 +83,11 @@ const portfolioItems = [
 ];
 
 export default function PortfolioPage() {
+  useSEO({
+    title: 'Portfolio | LIGHTS - Luxury Event Management',
+    description: "Explore our handpicked collection of beautiful events including elegant weddings, corporate galas, birthday parties, and live concert stage designs."
+  });
+
   const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {

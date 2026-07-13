@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Award, Users, Star, ArrowRight, Calendar, Rocket, Trophy, Crown, MapPin, PartyPopper } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+import useSEO from '../hooks/useSEO';
 import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
 
@@ -29,6 +30,11 @@ const SectionOrnament = () => (
 );
 
 export default function AboutPage() {
+  useSEO({
+    title: 'About Us | LIGHTS - Luxury Event Management',
+    description: 'Learn about our history, our passion, commitment, creativity, and journey at LIGHTS Event Management. We design and deliver extraordinary experiences that leave a lasting impression.'
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

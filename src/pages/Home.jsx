@@ -5,6 +5,7 @@ import FeaturesBanner from '../components/FeaturesBanner';
 import StatsBanner from '../components/StatsBanner';
 import ProcessSection from '../components/ProcessSection';
 import ScrollReveal from '../components/ScrollReveal';
+import useSEO from '../hooks/useSEO';
 import { Star, Quote, Heart, PartyPopper, Presentation, Camera, Headphones, Speaker, ConciergeBell, Shield, ArrowRight, CheckCircle } from 'lucide-react';
 import leaves1 from '../assets/leaves1.png';
 import leaves2 from '../assets/leaves2.png';
@@ -44,6 +45,11 @@ const SectionOrnament = () => (
 );
 
 export default function Home() {
+  useSEO({
+    title: 'LIGHTS - Luxury Event Management by NDJ Groups',
+    description: 'From weddings to corporate events, LIGHTS Event Management transforms your vision into extraordinary, luxury experiences. Professional planning and design.'
+  });
+
   const testimonials = [
     {
       name: 'Priya & Rahul Mehta',
